@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */; };
+		5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */; };
 		5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A42C006A36009AD656 /* SoundlyApp.swift */; };
 		5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A62C006A36009AD656 /* ContentView.swift */; };
 		5C78B8A92C006A38009AD656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78B8A82C006A38009AD656 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionScreen.swift; sourceTree = "<group>"; };
+		5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoundsWidget.swift; sourceTree = "<group>"; };
 		5C78B8A12C006A36009AD656 /* Soundly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78B8A42C006A36009AD656 /* SoundlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundlyApp.swift; sourceTree = "<group>"; };
 		5C78B8A62C006A36009AD656 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +46,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C24747F2C099A0500B35058 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				5C2474802C099A1700B35058 /* Screens */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		5C2474802C099A1700B35058 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5C2474832C09DE2B00B35058 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		5C78B8982C006A36009AD656 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +89,7 @@
 		5C78B8A32C006A36009AD656 /* Soundly */ = {
 			isa = PBXGroup;
 			children = (
+				5C2474832C09DE2B00B35058 /* Commons */,
 				5C78B8B22C0070A6009AD656 /* Features */,
 				5C78B8A42C006A36009AD656 /* SoundlyApp.swift */,
 				5C78B8A62C006A36009AD656 /* ContentView.swift */,
@@ -81,6 +110,7 @@
 		5C78B8B22C0070A6009AD656 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5C24747F2C099A0500B35058 /* Setup */,
 				5C78B8B32C007121009AD656 /* Auth */,
 			);
 			path = Features;
@@ -232,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */,
 				5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
+				5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */,
 				5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */,
 				5CB7C8E92C08350A001B8F15 /* ForgotUsername.swift in Sources */,
 				5C78B8B92C007251009AD656 /* GetStartedScreen.swift in Sources */,

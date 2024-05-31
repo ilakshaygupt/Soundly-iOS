@@ -31,13 +31,11 @@ struct GetStartedScreen: View {
                     Image("Yoga")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: geometry.size.width * 0.90, height: geometry.size.height * 0.66)
-                    
+                        .frame(width: getScreenBounds().width  * 0.90, height: getScreenBounds().height  * 0.66)
                     Spacer()
-                    
                     NavigationLink(destination: LoginScreen()) {
                         Text("Get Started →")
-                            .frame(width: geometry.size.width * 0.70)
+                            .frame(width: getScreenBounds().width * 0.70)
                             .font(.system(size: 20))
                             .bold()
                             .foregroundColor(.white)
@@ -45,8 +43,7 @@ struct GetStartedScreen: View {
                             .background(Color(red: 0.0, green: 0.545, blue: 0.545))
                             .cornerRadius(10)
                     }
-                    .padding(.bottom , 40)
-                    
+                    .padding(.bottom , 50)
                 }
             }
         }

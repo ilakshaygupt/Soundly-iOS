@@ -17,10 +17,12 @@ struct ForgotUsername: View {
     @FocusState private var isEmailFieldFocused: Bool
     
     var body: some View {
-        GeometryReader { geometry in
+        
             NavigationStack {
                 VStack {
                     Image("SignIn")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .padding(EdgeInsets(top: 100, leading: 0, bottom: 10, trailing: 0))
                     
                     VStack {
@@ -87,8 +89,9 @@ struct ForgotUsername: View {
                         .padding(EdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 16))
                   
                         NavigationLink(destination: OTPScreen(isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)) {
+                            
                             Text("Continue")
-                                .frame(width: geometry.size.width * 0.85)
+                                .frame(width:getScreenBounds().width * 0.8 )
                                 .font(.system(size: 20))
                                 .bold()
                                 .foregroundColor(.white)
@@ -98,9 +101,10 @@ struct ForgotUsername: View {
                         }
                         
                         
-                        Spacer()
+                        Spacer(minLength: 0)
                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.62)
+                    .frame(width: getScreenBounds().width ,height: getScreenBounds().height * 0.5)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(red: 213/255, green: 234/255, blue: 234/255, opacity: 1.0))
                     .cornerRadius(50)
                     .padding()
@@ -129,7 +133,7 @@ struct ForgotUsername: View {
             }
             .ignoresSafeArea(.keyboard)
         }
-    }
+    
 }
 
 struct ForgotUsername_Previews: PreviewProvider {
