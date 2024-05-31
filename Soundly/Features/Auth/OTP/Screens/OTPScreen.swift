@@ -9,27 +9,34 @@ import SwiftUI
 
 struct OTPScreen: View {
     @State private var otp: String = ""
+    @State private var isSignedSuccessFully: Bool = false
     let isPhoneNumber: Bool
     let contactInfo: String
     @FocusState private var isOTPFieldFocused: Bool
     
     var body: some View {
-        GeometryReader { geometry in
+        if isSignedSuccessFully{
+            LanguageSelectionScreen()
+        }
+        else{
+            
             NavigationStack {
                 VStack (alignment: .center){
                     Image("OTPIllustration")
-                        .padding(EdgeInsets(top: 100, leading: 0, bottom: 40, trailing: 0))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: getScreenBounds().height * 0.4 )
+                        .padding(EdgeInsets(top: 100, leading: 0, bottom: 10, trailing: 0))
                     
-                    VStack {
+                    
+                    VStack(spacing:20) {
                         Text("Enter OTP")
                             .font(.system(size: 28))
                             .bold()
-                            .padding(EdgeInsets(top: 16, leading: 0, bottom: 4, trailing: 0))
                         
                         Text("Please enter the 4-digit code sent to you at \(contactInfo)")
                             .font(.system(size: 14))
                             .multilineTextAlignment(.center)
-                            .padding()
                         
                         TextField("Enter OTP", text: $otp)
                             .keyboardType(.numberPad)
@@ -40,36 +47,55 @@ struct OTPScreen: View {
                                     .stroke(!isOTPFieldFocused ? Color.gray : Color.black, lineWidth: 1)
                             )
                             .cornerRadius(10)
-                            .padding(.bottom, 10)
                             .focused($isOTPFieldFocused)
-                            .frame(width:geometry.size.width*0.85)
+                            .frame(width: getScreenBounds().width * 0.8)
                         
-                        Button(action: {
-                            print("Send button tapped")
-                        }) {
+                        NavigationLink(destination:LanguageSelectionScreen()){
                             Text("Send")
-                                .frame(width: geometry.size.width * 0.85)
+                                .frame(width: getScreenBounds().width * 0.8 )
                                 .font(.system(size: 20))
                                 .bold()
                                 .foregroundColor(.white)
                                 .padding()
                                 .background(Color(red: 0.0, green: 0.545, blue: 0.545))
                                 .cornerRadius(10)
+                            
                         }
+                        
                         .padding(.bottom, 40)
-                        Spacer()
+                        
                     }
-                    .frame(width: geometry.frame(in: .global).width , height: geometry.size.height * 0.62)
+                    .frame(width: getScreenBounds().width,height:getScreenBounds().height * 0.5)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(red: 213/255, green: 234/255, blue: 234/255, opacity: 1.0))
                     .cornerRadius(50)
                     .padding()
                     
-                }.frame(alignment: .center)
+                }.toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Spacer()
+                            Image("S")
+                            Text("Soundly")
+                                .font(.system(size: 28))
+                            Spacer()
+                            NavigationLink(destination: LoginScreen()) {
+                                Text("Login")
+                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
+                                    .bold()
+                                    .font(.system(size: 20))
+                                    .padding(.leading, 20)
+                                
+                            }
+                        }
+                    }
+                }
                 
-            
+                
             }
-        }.ignoresSafeArea(.keyboard)
+        }
     }
+    
 }
 
 #Preview {
