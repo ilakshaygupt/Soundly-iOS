@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */; };
 		5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */; };
+		5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */; };
 		5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A42C006A36009AD656 /* SoundlyApp.swift */; };
 		5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A62C006A36009AD656 /* ContentView.swift */; };
 		5C78B8A92C006A38009AD656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78B8A82C006A38009AD656 /* Assets.xcassets */; };
@@ -18,11 +19,15 @@
 		5CB7C8E72C083292001B8F15 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7C8E62C083291001B8F15 /* LoginScreen.swift */; };
 		5CB7C8E92C08350A001B8F15 /* ForgotUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7C8E82C08350A001B8F15 /* ForgotUsername.swift */; };
 		5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7C8EC2C08398F001B8F15 /* OTPScreen.swift */; };
+		5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE32C0D9AE0001C1E02 /* ArtistSelectionModel.swift */; };
+		5CBEADE72C0DCF92001C1E02 /* HomePageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */; };
+		5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionScreen.swift; sourceTree = "<group>"; };
 		5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoundsWidget.swift; sourceTree = "<group>"; };
+		5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionScreen.swift; sourceTree = "<group>"; };
 		5C78B8A12C006A36009AD656 /* Soundly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78B8A42C006A36009AD656 /* SoundlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundlyApp.swift; sourceTree = "<group>"; };
 		5C78B8A62C006A36009AD656 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +38,9 @@
 		5CB7C8E62C083291001B8F15 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		5CB7C8E82C08350A001B8F15 /* ForgotUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUsername.swift; sourceTree = "<group>"; };
 		5CB7C8EC2C08398F001B8F15 /* OTPScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPScreen.swift; sourceTree = "<group>"; };
+		5CBEADE32C0D9AE0001C1E02 /* ArtistSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionModel.swift; sourceTree = "<group>"; };
+		5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageScreen.swift; sourceTree = "<group>"; };
+		5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,7 @@
 		5C24747F2C099A0500B35058 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				5CBEADE22C0D9AC9001C1E02 /* Models */,
 				5C2474802C099A1700B35058 /* Screens */,
 			);
 			path = Setup;
@@ -58,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */,
+				5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -110,6 +120,7 @@
 		5C78B8B22C0070A6009AD656 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				5CBEADE52C0DCF0C001C1E02 /* HomePage */,
 				5C24747F2C099A0500B35058 /* Setup */,
 				5C78B8B32C007121009AD656 /* Auth */,
 			);
@@ -192,6 +203,31 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		5CBEADE22C0D9AC9001C1E02 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CBEADE32C0D9AE0001C1E02 /* ArtistSelectionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5CBEADE52C0DCF0C001C1E02 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				5CBEADE82C0DD3FA001C1E02 /* Screens */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		5CBEADE82C0DD3FA001C1E02 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */,
+				5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,11 +299,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */,
+				5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */,
+				5CBEADE72C0DCF92001C1E02 /* HomePageScreen.swift in Sources */,
 				5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
 				5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */,
 				5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */,
+				5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */,
 				5CB7C8E92C08350A001B8F15 /* ForgotUsername.swift in Sources */,
+				5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */,
 				5C78B8B92C007251009AD656 /* GetStartedScreen.swift in Sources */,
 				5C78B8BD2C00C0F9009AD656 /* SIgnUpScreen.swift in Sources */,
 				5CB7C8E72C083292001B8F15 /* LoginScreen.swift in Sources */,

@@ -57,12 +57,27 @@ struct OTPScreen: View {
                             .background(Color(red: 0.0, green: 0.545, blue: 0.545))
                             .cornerRadius(10)
                             .onTapGesture {
-                                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-                                        let window = windowScene?.windows.first
+                                let window = UIApplication
+                                    .shared
+                                    .connectedScenes
+                                    .compactMap { ($0 as? UIWindowScene)?.keyWindow }
+                                    .last
+                                
                                 window?.rootViewController = UIHostingController(rootView: LanguageSelectionScreen())
                                 window?.makeKeyAndVisible()
+                                
                             }
-
+//                        NavigationLink(destination:LanguageSelectionScreen()){
+//                            Text("Send")
+//                                                      .frame(width: getScreenBounds().width * 0.8)
+//                                                      .font(.system(size: 20))
+//                                                      .bold()
+//                                                      .foregroundColor(.white)
+//                                                      .padding()
+//                                                      .background(Color(red: 0.0, green: 0.545, blue: 0.545))
+//                                                      .cornerRadius(10)
+//                        }
+                        
                        
                         
                         .padding(.bottom, 40)
