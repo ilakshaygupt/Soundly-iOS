@@ -14,7 +14,6 @@ struct GetStartedScreen: View {
                     HStack {
                         Text("Your Thoughts")
                             .font(.system(size: 30))
-                        
                         Text("Cleaner")
                             .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
                             .font(.system(size: 30))

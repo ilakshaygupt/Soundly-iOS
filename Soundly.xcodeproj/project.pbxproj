@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0227BB2C0EE29200D04DF2 /* HorizontalSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */; };
+		5C0227C62C0F2BE100D04DF2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227C52C0F2BE100D04DF2 /* APIRequest.swift */; };
+		5C0227D72C0F31A900D04DF2 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0227D62C0F31A900D04DF2 /* SwiftKeychainWrapper */; };
+		5C0227D92C0F34FA00D04DF2 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0227D82C0F34FA00D04DF2 /* SwiftKeychainWrapper */; };
+		5C0227DB2C0F469E00D04DF2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227DA2C0F469E00D04DF2 /* APIError.swift */; };
+		5C0227DD2C0F46F500D04DF2 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227DC2C0F46F500D04DF2 /* Auth.swift */; };
+		5C0227DF2C0F479000D04DF2 /* SignUpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227DE2C0F479000D04DF2 /* SignUpAction.swift */; };
+		5C0227E12C0F47D700D04DF2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E02C0F47D700D04DF2 /* SignUpViewModel.swift */; };
+		5C0227E32C0F47EF00D04DF2 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E22C0F47EF00D04DF2 /* SignUpRequest.swift */; };
+		5C0227E52C0F480300D04DF2 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E42C0F480300D04DF2 /* SignUpResponse.swift */; };
 		5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */; };
 		5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */; };
 		5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */; };
@@ -25,6 +35,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSongView.swift; sourceTree = "<group>"; };
+		5C0227C52C0F2BE100D04DF2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		5C0227DA2C0F469E00D04DF2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		5C0227DC2C0F46F500D04DF2 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		5C0227DE2C0F479000D04DF2 /* SignUpAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAction.swift; sourceTree = "<group>"; };
+		5C0227E02C0F47D700D04DF2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		5C0227E22C0F47EF00D04DF2 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		5C0227E42C0F480300D04DF2 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionScreen.swift; sourceTree = "<group>"; };
 		5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoundsWidget.swift; sourceTree = "<group>"; };
 		5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionScreen.swift; sourceTree = "<group>"; };
@@ -48,12 +66,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0227D92C0F34FA00D04DF2 /* SwiftKeychainWrapper in Frameworks */,
+				5C0227D72C0F31A900D04DF2 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0227BF2C0F2B8000D04DF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227E22C0F47EF00D04DF2 /* SignUpRequest.swift */,
+				5C0227E42C0F480300D04DF2 /* SignUpResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C0227C02C0F2B8500D04DF2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227E02C0F47D700D04DF2 /* SignUpViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C0227C12C0F2B9900D04DF2 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227DE2C0F479000D04DF2 /* SignUpAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		5C0227C22C0F2BB000D04DF2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227C52C0F2BE100D04DF2 /* APIRequest.swift */,
+				5C0227DA2C0F469E00D04DF2 /* APIError.swift */,
+				5C0227DC2C0F46F500D04DF2 /* Auth.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5C0227E62C0F550900D04DF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C0227E72C0F551F00D04DF2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C0227E82C0F552B00D04DF2 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		5C24747F2C099A0500B35058 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +175,7 @@
 		5C78B8A32C006A36009AD656 /* Soundly */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227C22C0F2BB000D04DF2 /* Utilities */,
 				5C2474832C09DE2B00B35058 /* Commons */,
 				5C78B8B22C0070A6009AD656 /* Features */,
 				5C78B8A42C006A36009AD656 /* SoundlyApp.swift */,
@@ -157,6 +234,9 @@
 		5C78B8BA2C00C0CA009AD656 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227C12C0F2B9900D04DF2 /* Actions */,
+				5C0227C02C0F2B8500D04DF2 /* ViewModels */,
+				5C0227BF2C0F2B8000D04DF2 /* Models */,
 				5C78B8BB2C00C0D9009AD656 /* Screens */,
 			);
 			path = SignUp;
@@ -190,6 +270,9 @@
 		5CB7C8EA2C083961001B8F15 /* OTP */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227E82C0F552B00D04DF2 /* Actions */,
+				5C0227E72C0F551F00D04DF2 /* ViewModels */,
+				5C0227E62C0F550900D04DF2 /* Models */,
 				5CB7C8EB2C08396E001B8F15 /* Screens */,
 			);
 			path = OTP;
@@ -224,6 +307,7 @@
 			children = (
 				5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */,
 				5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */,
+				5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -244,6 +328,10 @@
 			dependencies = (
 			);
 			name = Soundly;
+			packageProductDependencies = (
+				5C0227D62C0F31A900D04DF2 /* SwiftKeychainWrapper */,
+				5C0227D82C0F34FA00D04DF2 /* SwiftKeychainWrapper */,
+			);
 			productName = Soundly;
 			productReference = 5C78B8A12C006A36009AD656 /* Soundly.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +360,9 @@
 				Base,
 			);
 			mainGroup = 5C78B8982C006A36009AD656;
+			packageReferences = (
+				5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 5C78B8A22C006A36009AD656 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,17 +390,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */,
+				5C0227DF2C0F479000D04DF2 /* SignUpAction.swift in Sources */,
 				5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */,
 				5CBEADE72C0DCF92001C1E02 /* HomePageScreen.swift in Sources */,
 				5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */,
+				5C0227E12C0F47D700D04DF2 /* SignUpViewModel.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
 				5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */,
 				5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */,
 				5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */,
 				5CB7C8E92C08350A001B8F15 /* ForgotUsername.swift in Sources */,
+				5C0227DD2C0F46F500D04DF2 /* Auth.swift in Sources */,
+				5C0227BB2C0EE29200D04DF2 /* HorizontalSongView.swift in Sources */,
+				5C0227DB2C0F469E00D04DF2 /* APIError.swift in Sources */,
 				5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */,
 				5C78B8B92C007251009AD656 /* GetStartedScreen.swift in Sources */,
+				5C0227E52C0F480300D04DF2 /* SignUpResponse.swift in Sources */,
 				5C78B8BD2C00C0F9009AD656 /* SIgnUpScreen.swift in Sources */,
+				5C0227E32C0F47EF00D04DF2 /* SignUpRequest.swift in Sources */,
+				5C0227C62C0F2BE100D04DF2 /* APIRequest.swift in Sources */,
 				5CB7C8E72C083292001B8F15 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +615,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C0227D62C0F31A900D04DF2 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+		5C0227D82C0F34FA00D04DF2 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5C78B8992C006A36009AD656 /* Project object */;
 }

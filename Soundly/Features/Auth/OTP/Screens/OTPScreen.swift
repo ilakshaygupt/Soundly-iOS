@@ -15,9 +15,6 @@ struct OTPScreen: View {
     @FocusState private var isOTPFieldFocused: Bool
     
     var body: some View {
-      
-        
-            
             NavigationStack {
                 VStack (alignment: .center){
                     Image("OTPIllustration")
@@ -25,8 +22,6 @@ struct OTPScreen: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: getScreenBounds().height * 0.4 )
                         .padding(EdgeInsets(top: 100, leading: 0, bottom: 10, trailing: 0))
-                    
-                    
                     VStack(spacing:20) {
                         Text("Enter OTP")
                             .font(.system(size: 28))
