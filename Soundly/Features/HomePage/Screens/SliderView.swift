@@ -29,12 +29,7 @@ struct SliderView: View {
                                 .fontWeight(.heavy)
                                 .font(.system(size: 26))
                                 
-                                
                             Text("By Soundly").font(.system(size: 16))
-                                
-                                
-                            
-                            
                                 
                                 Text("Listen Now")
                                     .font(.system(size: 20))
