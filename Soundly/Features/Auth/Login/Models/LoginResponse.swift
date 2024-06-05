@@ -7,10 +7,8 @@
 
 import Foundation
 
-
-struct LoginResponse: Decodable {
+struct LoginResponse :Decodable{
     let success: Bool
     let message: String
+    
 }
-
-

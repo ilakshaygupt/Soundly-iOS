@@ -1,28 +1,31 @@
 //
-//  SignUpAction.swift
+//  ForgotUsernameAction.swift
 //  Soundly
 //
-//  Created by Lakshay Gupta on 04/06/24.
+//  Created by Lakshay Gupta on 05/06/24.
 //
 
 import Foundation
 
-struct SignupEmailAction {
-    let path = "/user/register/email/"
+
+
+
+struct ForgotUsernameEmailAction {
+    let path = "/user/forgot-email/"
     let method: HTTPMethod = .post
-       var parameters: SignupEmailRequest
+       var parameters: ForgotUsernameEmailRequest
        
        func call(
-           completion: @escaping (SignupResponse) -> Void,
+           completion: @escaping (ForgotUsernameEmailResponse) -> Void,
            failure: @escaping (APIError) -> Void
        ) {
-           APIRequest<SignupEmailRequest, SignupResponse>.call(
+           APIRequest<ForgotUsernameEmailRequest, ForgotUsernameEmailResponse>.call(
                path: path,
                method: .post,
                parameters: parameters
            ) { data in
                if let response = try? JSONDecoder().decode(
-                   SignupResponse.self,
+                ForgotUsernameEmailResponse.self,
                    from: data
                ) {
                    print(response)
@@ -38,22 +41,24 @@ struct SignupEmailAction {
 
 
 
-struct SignupPhoneAction {
-    let path = "/user/register/phone/"
+
+
+struct ForgotUsernamePhoneAction {
+    let path = "/user/forgot-phone_number/"
     let method: HTTPMethod = .post
-       var parameters: SignupPhoneRequest
+       var parameters: ForgotUsernamePhoneRequest
        
        func call(
-           completion: @escaping (SignupResponse) -> Void,
+           completion: @escaping (ForgotUsernamePhoneResponse) -> Void,
            failure: @escaping (APIError) -> Void
        ) {
-           APIRequest<SignupPhoneRequest, SignupResponse>.call(
+           APIRequest<ForgotUsernamePhoneRequest, ForgotUsernamePhoneResponse>.call(
                path: path,
                method: .post,
                parameters: parameters
            ) { data in
                if let response = try? JSONDecoder().decode(
-                   SignupResponse.self,
+                ForgotUsernamePhoneResponse.self,
                    from: data
                ) {
                    print(response)
