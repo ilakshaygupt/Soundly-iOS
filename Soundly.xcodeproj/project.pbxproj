@@ -17,6 +17,18 @@
 		5C0227E12C0F47D700D04DF2 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E02C0F47D700D04DF2 /* SignUpViewModel.swift */; };
 		5C0227E32C0F47EF00D04DF2 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E22C0F47EF00D04DF2 /* SignUpRequest.swift */; };
 		5C0227E52C0F480300D04DF2 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E42C0F480300D04DF2 /* SignUpResponse.swift */; };
+		5C0227EA2C0F589900D04DF2 /* OTPAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227E92C0F589900D04DF2 /* OTPAction.swift */; };
+		5C0227EC2C0F58AA00D04DF2 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227EB2C0F58AA00D04DF2 /* OTPViewModel.swift */; };
+		5C0227EE2C0F58B900D04DF2 /* OTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227ED2C0F58B900D04DF2 /* OTPRequest.swift */; };
+		5C0227F02C0F599000D04DF2 /* OTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227EF2C0F598F00D04DF2 /* OTPResponse.swift */; };
+		5C0227F62C0F8E5D00D04DF2 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227F52C0F8E5D00D04DF2 /* LoginRequest.swift */; };
+		5C0227F82C0F8E6A00D04DF2 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227F72C0F8E6A00D04DF2 /* LoginResponse.swift */; };
+		5C0227FA2C0F915000D04DF2 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227F92C0F915000D04DF2 /* LoginViewModel.swift */; };
+		5C0227FC2C0F91A400D04DF2 /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227FB2C0F91A400D04DF2 /* LoginAction.swift */; };
+		5C0228032C100EED00D04DF2 /* ForgotUsernameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0228022C100EED00D04DF2 /* ForgotUsernameRequest.swift */; };
+		5C0228052C100EFA00D04DF2 /* ForgotUsernameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0228042C100EFA00D04DF2 /* ForgotUsernameResponse.swift */; };
+		5C0228072C100F1200D04DF2 /* ForgotUsernameAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0228062C100F1200D04DF2 /* ForgotUsernameAction.swift */; };
+		5C02280A2C100F2800D04DF2 /* ForgotUsernameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0228092C100F2800D04DF2 /* ForgotUsernameViewModel.swift */; };
 		5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */; };
 		5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */; };
 		5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */; };
@@ -43,6 +55,18 @@
 		5C0227E02C0F47D700D04DF2 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5C0227E22C0F47EF00D04DF2 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		5C0227E42C0F480300D04DF2 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		5C0227E92C0F589900D04DF2 /* OTPAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAction.swift; sourceTree = "<group>"; };
+		5C0227EB2C0F58AA00D04DF2 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		5C0227ED2C0F58B900D04DF2 /* OTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRequest.swift; sourceTree = "<group>"; };
+		5C0227EF2C0F598F00D04DF2 /* OTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponse.swift; sourceTree = "<group>"; };
+		5C0227F52C0F8E5D00D04DF2 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		5C0227F72C0F8E6A00D04DF2 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		5C0227F92C0F915000D04DF2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5C0227FB2C0F91A400D04DF2 /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
+		5C0228022C100EED00D04DF2 /* ForgotUsernameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUsernameRequest.swift; sourceTree = "<group>"; };
+		5C0228042C100EFA00D04DF2 /* ForgotUsernameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUsernameResponse.swift; sourceTree = "<group>"; };
+		5C0228062C100F1200D04DF2 /* ForgotUsernameAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUsernameAction.swift; sourceTree = "<group>"; };
+		5C0228092C100F2800D04DF2 /* ForgotUsernameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewModel.swift; sourceTree = "<group>"; };
 		5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionScreen.swift; sourceTree = "<group>"; };
 		5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoundsWidget.swift; sourceTree = "<group>"; };
 		5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionScreen.swift; sourceTree = "<group>"; };
@@ -112,6 +136,8 @@
 		5C0227E62C0F550900D04DF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227ED2C0F58B900D04DF2 /* OTPRequest.swift */,
+				5C0227EF2C0F598F00D04DF2 /* OTPResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -119,6 +145,7 @@
 		5C0227E72C0F551F00D04DF2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227EB2C0F58AA00D04DF2 /* OTPViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -126,6 +153,76 @@
 		5C0227E82C0F552B00D04DF2 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227E92C0F589900D04DF2 /* OTPAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		5C0227F22C0F8E2400D04DF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227F52C0F8E5D00D04DF2 /* LoginRequest.swift */,
+				5C0227F72C0F8E6A00D04DF2 /* LoginResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C0227F32C0F8E2B00D04DF2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227F92C0F915000D04DF2 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C0227F42C0F8E3800D04DF2 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				5C0227FB2C0F91A400D04DF2 /* LoginAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		5C0227FD2C100E5700D04DF2 /* ForgotUsername */ = {
+			isa = PBXGroup;
+			children = (
+				5C0228012C100E7A00D04DF2 /* Actions */,
+				5C0228002C100E7000D04DF2 /* ViewModels */,
+				5C0227FF2C100E6B00D04DF2 /* Models */,
+				5C0227FE2C100E6300D04DF2 /* Screens */,
+			);
+			path = ForgotUsername;
+			sourceTree = "<group>";
+		};
+		5C0227FE2C100E6300D04DF2 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5CB7C8E82C08350A001B8F15 /* ForgotUsername.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5C0227FF2C100E6B00D04DF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C0228022C100EED00D04DF2 /* ForgotUsernameRequest.swift */,
+				5C0228042C100EFA00D04DF2 /* ForgotUsernameResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C0228002C100E7000D04DF2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C0228092C100F2800D04DF2 /* ForgotUsernameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C0228012C100E7A00D04DF2 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				5C0228062C100F1200D04DF2 /* ForgotUsernameAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -207,6 +304,7 @@
 		5C78B8B32C007121009AD656 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227FD2C100E5700D04DF2 /* ForgotUsername */,
 				5CB7C8EA2C083961001B8F15 /* OTP */,
 				5CB7C8E42C08326E001B8F15 /* Login */,
 				5C78B8BA2C00C0CA009AD656 /* SignUp */,
@@ -253,6 +351,9 @@
 		5CB7C8E42C08326E001B8F15 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				5C0227F42C0F8E3800D04DF2 /* Actions */,
+				5C0227F32C0F8E2B00D04DF2 /* ViewModels */,
+				5C0227F22C0F8E2400D04DF2 /* Models */,
 				5CB7C8E52C08327B001B8F15 /* Screens */,
 			);
 			path = Login;
@@ -262,7 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				5CB7C8E62C083291001B8F15 /* LoginScreen.swift */,
-				5CB7C8E82C08350A001B8F15 /* ForgotUsername.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -389,27 +489,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0228032C100EED00D04DF2 /* ForgotUsernameRequest.swift in Sources */,
 				5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */,
+				5C0227F62C0F8E5D00D04DF2 /* LoginRequest.swift in Sources */,
 				5C0227DF2C0F479000D04DF2 /* SignUpAction.swift in Sources */,
+				5C0228072C100F1200D04DF2 /* ForgotUsernameAction.swift in Sources */,
 				5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */,
 				5CBEADE72C0DCF92001C1E02 /* HomePageScreen.swift in Sources */,
+				5C02280A2C100F2800D04DF2 /* ForgotUsernameViewModel.swift in Sources */,
 				5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */,
 				5C0227E12C0F47D700D04DF2 /* SignUpViewModel.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
 				5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */,
 				5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */,
 				5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */,
+				5C0227F82C0F8E6A00D04DF2 /* LoginResponse.swift in Sources */,
 				5CB7C8E92C08350A001B8F15 /* ForgotUsername.swift in Sources */,
 				5C0227DD2C0F46F500D04DF2 /* Auth.swift in Sources */,
 				5C0227BB2C0EE29200D04DF2 /* HorizontalSongView.swift in Sources */,
 				5C0227DB2C0F469E00D04DF2 /* APIError.swift in Sources */,
+				5C0228052C100EFA00D04DF2 /* ForgotUsernameResponse.swift in Sources */,
+				5C0227EC2C0F58AA00D04DF2 /* OTPViewModel.swift in Sources */,
 				5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */,
+				5C0227FC2C0F91A400D04DF2 /* LoginAction.swift in Sources */,
+				5C0227F02C0F599000D04DF2 /* OTPResponse.swift in Sources */,
 				5C78B8B92C007251009AD656 /* GetStartedScreen.swift in Sources */,
+				5C0227FA2C0F915000D04DF2 /* LoginViewModel.swift in Sources */,
 				5C0227E52C0F480300D04DF2 /* SignUpResponse.swift in Sources */,
 				5C78B8BD2C00C0F9009AD656 /* SIgnUpScreen.swift in Sources */,
 				5C0227E32C0F47EF00D04DF2 /* SignUpRequest.swift in Sources */,
+				5C0227EA2C0F589900D04DF2 /* OTPAction.swift in Sources */,
 				5C0227C62C0F2BE100D04DF2 /* APIRequest.swift in Sources */,
 				5CB7C8E72C083292001B8F15 /* LoginScreen.swift in Sources */,
+				5C0227EE2C0F58B900D04DF2 /* OTPRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

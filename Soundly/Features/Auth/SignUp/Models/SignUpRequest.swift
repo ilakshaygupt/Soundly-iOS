@@ -8,7 +8,12 @@
 import Foundation
 
 
-struct SignupRequest: Encodable {
+struct SignupEmailRequest: Encodable {
     let email: String
+    let username: String
+}
+
+struct SignupPhoneRequest: Encodable {
+    let phone_number: String
     let username: String
 }

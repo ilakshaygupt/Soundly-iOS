@@ -6,8 +6,7 @@
 //
 
 import Foundation
-
-
-struct LoginRequest: Encodable {
-    let username: String
+//
+struct LoginRequest :Encodable{
+    let username : String?
 }

@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct LoginScreen: View {
+    @ObservedObject var viewModel = LoginViewModel()
     @State private var username: String = ""
-    @State private var phoneNumber: String = ""
-    @State private var email: String = ""
-    @State private var isPhoneNumber: Bool = true
     @FocusState private var isUsernameFieldFocused: Bool
-    @FocusState private var isPhonenumberFieldFocused: Bool
-    @FocusState private var isEmailFieldFocused: Bool
     
     var body: some View {
+        if viewModel.isSuccess {
+            OTPScreen(username: username, isPhoneNumber: nil, contactInfo: nil)
+        }
+        else{
             NavigationStack {
                 VStack {
                     Image("SignIn")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(EdgeInsets(top: 100, leading: 0, bottom: 10, trailing: 0))
-                    
+
                     
                     VStack {
                         Text("Login")
@@ -56,41 +56,52 @@ struct LoginScreen: View {
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
                                 .focused($isUsernameFieldFocused)
-                            
-                           
+                                .textInputAutocapitalization(.never)
                         }
                         .padding(EdgeInsets(.init(top: 10, leading: 16, bottom: 0, trailing: 16)))
                         
                         HStack{
                             Spacer()
+                            
                             NavigationLink (
-                            destination: ForgotUsername()
+                                destination: ForgotUsername()
                             ){
                                 Text("Forgot Username?").padding(.trailing,10)
                             }
                         }.padding(.bottom,10)
                         
-                        NavigationLink(destination: OTPScreen(isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)) {
-                            
-                            Text("Continue")
-                                .frame(width:getScreenBounds().width * 0.8 )
-                                .font(.system(size: 20))
-                                .bold()
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color(red: 0.0, green: 0.545, blue: 0.545))
-                                .cornerRadius(10)
-                        }
-                        .padding(.bottom, 40)
-                        
-                        
-                    }
+                        Button(action: {
+                                viewModel.username = username
+                                viewModel.login()
+                                            }) {
+                            if viewModel.isLoading {
+                                                           ProgressView()
+                                                               .progressViewStyle(CircularProgressViewStyle())
+                                                               .foregroundColor(.white)
+                                                       } else {
+                                                           Text("Send")
+                                                               .frame(width: getScreenBounds().width * 0.8)
+                                                               .font(.system(size: 20))
+                                                               .bold()
+                                                               .foregroundColor(.white)
+                                                               .padding()
+                                                               .background(Color(red: 0.0, green: 0.545, blue: 0.545))
+                                                               .cornerRadius(10)
+                                                               .padding(.bottom, 40)
+                                                       }
+                                             
+                                            }
+                                            
+                                            
+                      
+                                        }
                     .frame(width: getScreenBounds().width,height:getScreenBounds().height * 0.5)
+                    
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(red: 213/255, green: 234/255, blue: 234/255, opacity: 1.0))
                     .cornerRadius(50)
                     .padding()
-                    
+                   
                     
                 }
                 .toolbar {
@@ -112,9 +123,8 @@ struct LoginScreen: View {
                         }
                     }
                 }
-            
-        }
-    }
+            }
+        }}
 }
 
 #Preview {

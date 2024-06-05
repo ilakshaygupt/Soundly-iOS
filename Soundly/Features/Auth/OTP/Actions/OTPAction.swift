@@ -1,5 +1,5 @@
 //
-//  LoginAction.swift
+//  OTPAction.swift
 //  Soundly
 //
 //  Created by Lakshay Gupta on 04/06/24.
@@ -8,23 +8,22 @@
 import Foundation
 
 
-
-struct LoginAction {
-    let path = "/user/login/"
+struct OTPAction {
+    let path = "/user/verify/"
     let method: HTTPMethod = .post
-       var parameters: LoginRequest
+       var parameters: OTPRequest
        
        func call(
-           completion: @escaping (LoginResponse) -> Void,
+           completion: @escaping (OTPResponse) -> Void,
            failure: @escaping (APIError) -> Void
        ) {
-           APIRequest<LoginRequest, LoginResponse>.call(
+           APIRequest<OTPRequest, OTPResponse>.call(
                path: path,
                method: .post,
                parameters: parameters
            ) { data in
                if let response = try? JSONDecoder().decode(
-                   LoginResponse.self,
+                   OTPResponse.self,
                    from: data
                ) {
                    print(response)

@@ -17,12 +17,16 @@ class Auth: ObservableObject {
     
     struct SignupDetails {
         var email: String?
+        var username: String?
+        var phoneNumber : String?
     }
     
     enum KeychainKey: String {
         case access
         case refresh
         case email
+        case username
+        case phoneNumber
     }
     
     static let shared: Auth = Auth()
@@ -69,11 +73,22 @@ class Auth: ObservableObject {
     
     func setSignUpEmail(email: String){
         keychain.set(email, forKey: KeychainKey.email.rawValue)
+        
+    }
+    func setSignUpUsername(username: String){
+        keychain.set(username, forKey: KeychainKey.username.rawValue)
+        keychain.string(forKey: KeychainKey.username.rawValue)
+    }
+    func setSignUpPhoneNumber(phoneNumber: String){
+        keychain.set(phoneNumber, forKey: KeychainKey.phoneNumber.rawValue)
     }
     
     func getSignUpEmail() -> SignupDetails{
         return SignupDetails(
-            email: keychain.string(forKey: KeychainKey.email.rawValue)
+            
+            email: keychain.string(forKey: KeychainKey.email.rawValue),
+            username: keychain.string(forKey: KeychainKey.username.rawValue),
+            phoneNumber: keychain.string(forKey: KeychainKey.phoneNumber.rawValue)
         )
     }
 }

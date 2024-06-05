@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SignUpScreen: View {
-    @ObservedObject var viewModel = SignupViewModel()
+    @ObservedObject var emailViewModel = SignupEmailViewModel()
+    @ObservedObject var phoneViewModel = SignupPhoneViewModel()
     @State private var username: String = ""
     @State private var phoneNumber: String = ""
     @State private var email: String = ""
@@ -16,11 +17,11 @@ struct SignUpScreen: View {
     @FocusState private var isUsernameFieldFocused: Bool
     @FocusState private var isPhonenumberFieldFocused: Bool
     @FocusState private var isEmailFieldFocused: Bool
-    
+
     var body: some View {
-        if viewModel.success{
-            OTPScreen(isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email )
-        }
+        if isPhoneNumber ? phoneViewModel.success : emailViewModel.success {
+                OTPScreen(username: username, isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)
+            }
         else{
             NavigationStack {
                 VStack {
@@ -57,6 +58,8 @@ struct SignUpScreen: View {
                                 .cornerRadius(10)
                                 .padding(.bottom, 10)
                                 .focused($isUsernameFieldFocused)
+                                .textInputAutocapitalization(.never)
+                                
                             
                             HStack {
                                 Text(isPhoneNumber ? "Phone Number" : "Email")
@@ -100,33 +103,37 @@ struct SignUpScreen: View {
                         .padding()
                         
                         Button(action: {
-                            viewModel.username = username
-                            viewModel.email = email
-                            viewModel.SignUp()
-                            
+                            if isPhoneNumber {
+                                  phoneViewModel.username = username
+                                  phoneViewModel.phone_number = phoneNumber
+                                
+                                  phoneViewModel.SignUp()
+                              } else {
+                                  emailViewModel.username = username
+                                  emailViewModel.email = email
+                                  emailViewModel.SignUp()
+                              }
                         }) {
-                            Text("Continue")
-                                .frame(width:320)
-                                .font(.system(size: 20))
-                                .bold()
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color(red: 0.0, green: 0.545, blue: 0.545))
-                                .cornerRadius(10)
+                            if isPhoneNumber ? phoneViewModel.isLoading : emailViewModel.isLoading {
+                                                        ProgressView()
+                                                            .frame(width: 320)
+                                                            .padding()
+                            } else {
+                                Text("Continue")
+                                    .frame(width:320)
+                                    .font(.system(size: 20))
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color(red: 0.0, green: 0.545, blue: 0.545))
+                                    .cornerRadius(10)
+                            }
                         }
+                        .alert(isPresented: isPhoneNumber ? $phoneViewModel.isErrorToast : $emailViewModel.isErrorToast) {
+                            Alert(title: Text("Error"), message: Text(isPhoneNumber ? phoneViewModel.errorMessage : emailViewModel.errorMessage), dismissButton: .default(Text("OK")))
+                                                }
                         
-                        //                    NavigationLink(destination: OTPScreen(isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)) {
-                        //
-                        //                        Text("Continue")
-                        //                            .frame(width:getScreenBounds().width * 0.8 )
-                        //                            .font(.system(size: 20))
-                        //                            .bold()
-                        //                            .foregroundColor(.white)
-                        //                            .padding()
-                        //                            .background(Color(red: 0.0, green: 0.545, blue: 0.545))
-                        //                            .cornerRadius(10)
-                        //                    }
-                        //                    .padding(.bottom, 40)
+                 
                         Spacer()
                     }
                     
