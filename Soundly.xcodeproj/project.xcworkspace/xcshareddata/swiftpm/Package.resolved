@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "pageview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fredyshox/PageView.git",
+      "state" : {
+        "revision" : "b70afdef6379006bc91444f144d83ffe4e48f949",
+        "version" : "1.5.1"
+      }
+    },
+    {
       "identity" : "swiftkeychainwrapper",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jrendel/SwiftKeychainWrapper",
