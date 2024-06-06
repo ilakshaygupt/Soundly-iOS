@@ -2,14 +2,16 @@
 //  HorizontalSongView.swift
 //  Soundly
 //
-//  Created by Lakshay Gupta on 04/06/24.
+//  Created by Lakshay Gupta on 06/06/24.
 //
+
 import SwiftUI
-import NetworkImage // Import URLImage library
+import NetworkImage
+
 
 struct HorizontalSongView: View {
-    @State private var publicSongs: [Song] = []
-    
+    @StateObject private var viewModel = HorizontalSongViewModel()
+
     var body: some View {
         VStack {
             HStack {
@@ -19,60 +21,38 @@ struct HorizontalSongView: View {
                 Spacer()
             }
             .padding()
-            
-            ScrollView(.horizontal) {
-                ScrollViewReader { value in
-                    LazyHStack {
-                        ForEach(publicSongs, id: \.id) { song in
-                            
-                            VStack {
-                                
-                                NetworkImage(imageUrl: URL(string: song.thumbnail_url)!)
 
-                                .frame(width: 180, height: 180)
-                                .border(Color.black)
-                                .padding()
-                                
-                                Text(song.name)
-                                    .font(.headline)
-                                
-                                Text(song.artist)
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
+            if viewModel.isLoading {
+                ShimmerView()
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    ScrollViewReader { value in
+                        LazyHStack {
+                            ForEach(viewModel.publicSongs, id: \.id) { song in
+                                SongCardView(song: song)
                             }
                         }
-                    }
-                    .onAppear {
-                        if getLangDirection() == .rightToLeft {
-                            value.scrollTo(publicSongs.count - 1)
+                        .onAppear {
+                            if getDirection() == .rightToLeft {
+                                value.scrollTo(viewModel.publicSongs.count - 1)
+                            }
                         }
                     }
                 }
             }
         }
         .onAppear {
-            fetchPublicSongs()
+            viewModel.fetchPublicSongs()
         }
     }
-    
-    func fetchPublicSongs() {
-        PublicSongsAction().call(
-            completion: { response in
-                self.publicSongs = response.data
 
-            },
-            failure: { error in
-                print("Failed to fetch public songs: \(error)")
-            }
-        )
-    }
-    
-    func getLangDirection() -> Locale.LanguageDirection? {
+    private func getDirection() -> Locale.LanguageDirection? {
         guard let language = Locale.current.languageCode else { return nil }
         let direction = Locale.characterDirection(forLanguage: language)
         return direction
     }
 }
+
 
 struct HorizontalSongView_Previews: PreviewProvider {
     static var previews: some View {

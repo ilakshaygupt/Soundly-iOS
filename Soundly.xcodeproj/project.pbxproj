@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C0227BB2C0EE29200D04DF2 /* HorizontalSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */; };
 		5C0227C62C0F2BE100D04DF2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0227C52C0F2BE100D04DF2 /* APIRequest.swift */; };
 		5C0227D72C0F31A900D04DF2 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0227D62C0F31A900D04DF2 /* SwiftKeychainWrapper */; };
 		5C0227D92C0F34FA00D04DF2 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0227D82C0F34FA00D04DF2 /* SwiftKeychainWrapper */; };
@@ -38,6 +37,10 @@
 		5C7280972C11C91800BA9534 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280962C11C91800BA9534 /* SongRequest.swift */; };
 		5C72809A2C11CDC800BA9534 /* NetworkImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5C7280992C11CDC800BA9534 /* NetworkImage */; };
 		5C72809C2C11D14F00BA9534 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C72809B2C11D14F00BA9534 /* NetworkImage.swift */; };
+		5C7280A12C11DE5300BA9534 /* HorizontalSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280A02C11DE5300BA9534 /* HorizontalSongView.swift */; };
+		5C7280A32C11E37400BA9534 /* SongCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280A22C11E37400BA9534 /* SongCardView.swift */; };
+		5C7280A62C12148E00BA9534 /* PageView in Frameworks */ = {isa = PBXBuildFile; productRef = 5C7280A52C12148E00BA9534 /* PageView */; };
+		5C7280A82C12159200BA9534 /* SliderPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280A72C12159200BA9534 /* SliderPageView.swift */; };
 		5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A42C006A36009AD656 /* SoundlyApp.swift */; };
 		5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A62C006A36009AD656 /* ContentView.swift */; };
 		5C78B8A92C006A38009AD656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78B8A82C006A38009AD656 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE32C0D9AE0001C1E02 /* ArtistSelectionModel.swift */; };
 		5CBEADE72C0DCF92001C1E02 /* HomePageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */; };
 		5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */; };
+		5CD9D9232C12300E00C46159 /* SliderAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9D9222C12300D00C46159 /* SliderAlbumModel.swift */; };
+		5CD9D9252C1232F500C46159 /* ShimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9D9242C1232F500C46159 /* ShimmerView.swift */; };
+		5CD9D9272C12452000C46159 /* HorizontalSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9D9262C12452000C46159 /* HorizontalSongViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -78,7 +84,6 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
-		5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSongView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.plist; };
 		5C0227C52C0F2BE100D04DF2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		5C0227DA2C0F469E00D04DF2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5C0227DC2C0F46F500D04DF2 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -107,6 +112,9 @@
 		5C7280962C11C91800BA9534 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
 		5C72809B2C11D14F00BA9534 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 		5C72809F2C11DB9600BA9534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C7280A02C11DE5300BA9534 /* HorizontalSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSongView.swift; sourceTree = "<group>"; };
+		5C7280A22C11E37400BA9534 /* SongCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCardView.swift; sourceTree = "<group>"; };
+		5C7280A72C12159200BA9534 /* SliderPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPageView.swift; sourceTree = "<group>"; };
 		5C78B8A12C006A36009AD656 /* Soundly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78B8A42C006A36009AD656 /* SoundlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundlyApp.swift; sourceTree = "<group>"; };
 		5C78B8A62C006A36009AD656 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +128,9 @@
 		5CBEADE32C0D9AE0001C1E02 /* ArtistSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionModel.swift; sourceTree = "<group>"; };
 		5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageScreen.swift; sourceTree = "<group>"; };
 		5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		5CD9D9222C12300D00C46159 /* SliderAlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderAlbumModel.swift; sourceTree = "<group>"; };
+		5CD9D9242C1232F500C46159 /* ShimmerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerView.swift; sourceTree = "<group>"; };
+		5CD9D9262C12452000C46159 /* HorizontalSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSongViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C7280A62C12148E00BA9534 /* PageView in Frameworks */,
 				5C72809A2C11CDC800BA9534 /* NetworkImage in Frameworks */,
 				5C0227D92C0F34FA00D04DF2 /* SwiftKeychainWrapper in Frameworks */,
 				5C0227D72C0F31A900D04DF2 /* SwiftKeychainWrapper in Frameworks */,
@@ -298,6 +310,7 @@
 				5C72808F2C11C72D00BA9534 /* SongModel.swift */,
 				5C7280912C11C74400BA9534 /* SongResponse.swift */,
 				5C7280962C11C91800BA9534 /* SongRequest.swift */,
+				5CD9D9222C12300D00C46159 /* SliderAlbumModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +318,7 @@
 		5C72808D2C11C67F00BA9534 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5CD9D9262C12452000C46159 /* HorizontalSongViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -475,7 +489,10 @@
 			children = (
 				5CBEADE62C0DCF92001C1E02 /* HomePageScreen.swift */,
 				5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */,
-				5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */,
+				5C7280A02C11DE5300BA9534 /* HorizontalSongView.swift */,
+				5C7280A22C11E37400BA9534 /* SongCardView.swift */,
+				5C7280A72C12159200BA9534 /* SliderPageView.swift */,
+				5CD9D9242C1232F500C46159 /* ShimmerView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -502,6 +519,7 @@
 				5C0227D62C0F31A900D04DF2 /* SwiftKeychainWrapper */,
 				5C0227D82C0F34FA00D04DF2 /* SwiftKeychainWrapper */,
 				5C7280992C11CDC800BA9534 /* NetworkImage */,
+				5C7280A52C12148E00BA9534 /* PageView */,
 			);
 			productName = Soundly;
 			productReference = 5C78B8A12C006A36009AD656 /* Soundly.app */;
@@ -534,6 +552,7 @@
 			packageReferences = (
 				5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				5C7280982C11CDC700BA9534 /* XCRemoteSwiftPackageReference "NetworkImage" */,
+				5C7280A42C12148E00BA9534 /* XCRemoteSwiftPackageReference "PageView" */,
 			);
 			productRefGroup = 5C78B8A22C006A36009AD656 /* Products */;
 			projectDirPath = "";
@@ -566,29 +585,34 @@
 				5C0227F62C0F8E5D00D04DF2 /* LoginRequest.swift in Sources */,
 				5C0227DF2C0F479000D04DF2 /* SignUpAction.swift in Sources */,
 				5C0228072C100F1200D04DF2 /* ForgotUsernameAction.swift in Sources */,
+				5CD9D9232C12300E00C46159 /* SliderAlbumModel.swift in Sources */,
 				5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */,
 				5CBEADE72C0DCF92001C1E02 /* HomePageScreen.swift in Sources */,
 				5C02280A2C100F2800D04DF2 /* ForgotUsernameViewModel.swift in Sources */,
 				5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */,
 				5C0227E12C0F47D700D04DF2 /* SignUpViewModel.swift in Sources */,
+				5C7280A82C12159200BA9534 /* SliderPageView.swift in Sources */,
 				5C7280902C11C72D00BA9534 /* SongModel.swift in Sources */,
+				5CD9D9272C12452000C46159 /* HorizontalSongViewModel.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
 				5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */,
+				5C7280A32C11E37400BA9534 /* SongCardView.swift in Sources */,
 				5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */,
 				5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */,
 				5C0227F82C0F8E6A00D04DF2 /* LoginResponse.swift in Sources */,
 				5CB7C8E92C08350A001B8F15 /* ForgotUsername.swift in Sources */,
 				5C0227DD2C0F46F500D04DF2 /* Auth.swift in Sources */,
-				5C0227BB2C0EE29200D04DF2 /* HorizontalSongView.swift in Sources */,
 				5C0227DB2C0F469E00D04DF2 /* APIError.swift in Sources */,
 				5C0228052C100EFA00D04DF2 /* ForgotUsernameResponse.swift in Sources */,
 				5C0227EC2C0F58AA00D04DF2 /* OTPViewModel.swift in Sources */,
 				5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */,
 				5C7280922C11C74400BA9534 /* SongResponse.swift in Sources */,
 				5C0227FC2C0F91A400D04DF2 /* LoginAction.swift in Sources */,
+				5CD9D9252C1232F500C46159 /* ShimmerView.swift in Sources */,
 				5C0227F02C0F599000D04DF2 /* OTPResponse.swift in Sources */,
 				5C78B8B92C007251009AD656 /* GetStartedScreen.swift in Sources */,
 				5C0227FA2C0F915000D04DF2 /* LoginViewModel.swift in Sources */,
+				5C7280A12C11DE5300BA9534 /* HorizontalSongView.swift in Sources */,
 				5C0227E52C0F480300D04DF2 /* SignUpResponse.swift in Sources */,
 				5C7280952C11C7A500BA9534 /* PublicSongsAction.swift in Sources */,
 				5C78B8BD2C00C0F9009AD656 /* SIgnUpScreen.swift in Sources */,
@@ -826,6 +850,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		5C7280A42C12148E00BA9534 /* XCRemoteSwiftPackageReference "PageView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fredyshox/PageView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -843,6 +875,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C7280982C11CDC700BA9534 /* XCRemoteSwiftPackageReference "NetworkImage" */;
 			productName = NetworkImage;
+		};
+		5C7280A52C12148E00BA9534 /* PageView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C7280A42C12148E00BA9534 /* XCRemoteSwiftPackageReference "PageView" */;
+			productName = PageView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

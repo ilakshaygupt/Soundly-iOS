@@ -12,23 +12,23 @@ struct HomePageScreen: View {
         NavigationStack {
             ScrollView{
                 VStack {
-                    SliderView()
-                        .frame(width: getScreenBounds().width * 0.9,height : getScreenBounds().width * 0.9)
-                        .cornerRadius(40)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                        .padding(EdgeInsets(.init(top: 0, leading: 10, bottom: 0,trailing: 10)))
-                    HorizontalSongView()
-                    HorizontalSongView()
-                    HorizontalSongView()
+                SliderView()
+                    .frame(width: getScreenBounds().width * 0.9,height : getScreenBounds().width * 0.9)
+                    .cornerRadius(40)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(.init(top: 0, leading: 10, bottom: 0,trailing: 10)))
                     HorizontalSongView()
                     Spacer()
                 }
                 .toolbar {
                     ToolbarItem(placement: .principal) {
+
                         HStack {
                             Text("Hey , Lakshay")
                                 .font(.system(size: 28))
+
                             Spacer()
+
                             Image("Honey Singh")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
