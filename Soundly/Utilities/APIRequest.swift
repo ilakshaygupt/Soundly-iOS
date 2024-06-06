@@ -23,6 +23,7 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
         path: String,
         method: HTTPMethod,
         parameters: Parameters? = nil,
+        headers: [String: String]? = nil,
         completion: @escaping CompletionHandler,
         failure: @escaping FailureHandler
     ) {
@@ -32,6 +33,9 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
         var request = URLRequest(url: url!)
         request.httpMethod = method.rawValue
         
+        headers?.forEach { key, value in
+                    request.addValue(value, forHTTPHeaderField: key)
+                }
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("true", forHTTPHeaderField: "x-mock-match-request-body")
@@ -42,6 +46,7 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
         
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if let data = data {
+                
                 completion(data)
             } else {
                 if error != nil {

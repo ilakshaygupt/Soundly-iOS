@@ -32,6 +32,12 @@
 		5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */; };
 		5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */; };
 		5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */; };
+		5C7280902C11C72D00BA9534 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C72808F2C11C72D00BA9534 /* SongModel.swift */; };
+		5C7280922C11C74400BA9534 /* SongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280912C11C74400BA9534 /* SongResponse.swift */; };
+		5C7280952C11C7A500BA9534 /* PublicSongsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280942C11C7A500BA9534 /* PublicSongsAction.swift */; };
+		5C7280972C11C91800BA9534 /* SongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7280962C11C91800BA9534 /* SongRequest.swift */; };
+		5C72809A2C11CDC800BA9534 /* NetworkImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5C7280992C11CDC800BA9534 /* NetworkImage */; };
+		5C72809C2C11D14F00BA9534 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C72809B2C11D14F00BA9534 /* NetworkImage.swift */; };
 		5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A42C006A36009AD656 /* SoundlyApp.swift */; };
 		5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78B8A62C006A36009AD656 /* ContentView.swift */; };
 		5C78B8A92C006A38009AD656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C78B8A82C006A38009AD656 /* Assets.xcassets */; };
@@ -46,8 +52,33 @@
 		5CBEADEA2C0DD5D2001C1E02 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBEADE92C0DD5D2001C1E02 /* SliderView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		5C72809D2C11DA7100BA9534 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		5C72809E2C11DA7A00BA9534 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
-		5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSongView.swift; sourceTree = "<group>"; };
+		5C0227BA2C0EE29200D04DF2 /* HorizontalSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSongView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.plist; };
 		5C0227C52C0F2BE100D04DF2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		5C0227DA2C0F469E00D04DF2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5C0227DC2C0F46F500D04DF2 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -70,6 +101,12 @@
 		5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionScreen.swift; sourceTree = "<group>"; };
 		5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoundsWidget.swift; sourceTree = "<group>"; };
 		5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionScreen.swift; sourceTree = "<group>"; };
+		5C72808F2C11C72D00BA9534 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		5C7280912C11C74400BA9534 /* SongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResponse.swift; sourceTree = "<group>"; };
+		5C7280942C11C7A500BA9534 /* PublicSongsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicSongsAction.swift; sourceTree = "<group>"; };
+		5C7280962C11C91800BA9534 /* SongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRequest.swift; sourceTree = "<group>"; };
+		5C72809B2C11D14F00BA9534 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
+		5C72809F2C11DB9600BA9534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5C78B8A12C006A36009AD656 /* Soundly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C78B8A42C006A36009AD656 /* SoundlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundlyApp.swift; sourceTree = "<group>"; };
 		5C78B8A62C006A36009AD656 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C72809A2C11CDC800BA9534 /* NetworkImage in Frameworks */,
 				5C0227D92C0F34FA00D04DF2 /* SwiftKeychainWrapper in Frameworks */,
 				5C0227D72C0F31A900D04DF2 /* SwiftKeychainWrapper in Frameworks */,
 			);
@@ -249,8 +287,34 @@
 			isa = PBXGroup;
 			children = (
 				5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */,
+				5C72809B2C11D14F00BA9534 /* NetworkImage.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		5C72808C2C11C67A00BA9534 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C72808F2C11C72D00BA9534 /* SongModel.swift */,
+				5C7280912C11C74400BA9534 /* SongResponse.swift */,
+				5C7280962C11C91800BA9534 /* SongRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C72808D2C11C67F00BA9534 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C72808E2C11C68500BA9534 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				5C7280942C11C7A500BA9534 /* PublicSongsAction.swift */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 		5C78B8982C006A36009AD656 = {
@@ -272,6 +336,7 @@
 		5C78B8A32C006A36009AD656 /* Soundly */ = {
 			isa = PBXGroup;
 			children = (
+				5C72809F2C11DB9600BA9534 /* Info.plist */,
 				5C0227C22C0F2BB000D04DF2 /* Utilities */,
 				5C2474832C09DE2B00B35058 /* Commons */,
 				5C78B8B22C0070A6009AD656 /* Features */,
@@ -397,6 +462,9 @@
 		5CBEADE52C0DCF0C001C1E02 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				5C72808E2C11C68500BA9534 /* Action */,
+				5C72808D2C11C67F00BA9534 /* ViewModels */,
+				5C72808C2C11C67A00BA9534 /* Models */,
 				5CBEADE82C0DD3FA001C1E02 /* Screens */,
 			);
 			path = HomePage;
@@ -424,6 +492,8 @@
 				5C78B89F2C006A36009AD656 /* Resources */,
 			);
 			buildRules = (
+				5C72809E2C11DA7A00BA9534 /* PBXBuildRule */,
+				5C72809D2C11DA7100BA9534 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -431,6 +501,7 @@
 			packageProductDependencies = (
 				5C0227D62C0F31A900D04DF2 /* SwiftKeychainWrapper */,
 				5C0227D82C0F34FA00D04DF2 /* SwiftKeychainWrapper */,
+				5C7280992C11CDC800BA9534 /* NetworkImage */,
 			);
 			productName = Soundly;
 			productReference = 5C78B8A12C006A36009AD656 /* Soundly.app */;
@@ -462,6 +533,7 @@
 			mainGroup = 5C78B8982C006A36009AD656;
 			packageReferences = (
 				5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				5C7280982C11CDC700BA9534 /* XCRemoteSwiftPackageReference "NetworkImage" */,
 			);
 			productRefGroup = 5C78B8A22C006A36009AD656 /* Products */;
 			projectDirPath = "";
@@ -499,6 +571,7 @@
 				5C02280A2C100F2800D04DF2 /* ForgotUsernameViewModel.swift in Sources */,
 				5C78B8A72C006A36009AD656 /* ContentView.swift in Sources */,
 				5C0227E12C0F47D700D04DF2 /* SignUpViewModel.swift in Sources */,
+				5C7280902C11C72D00BA9534 /* SongModel.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
 				5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */,
 				5CB7C8ED2C08398F001B8F15 /* OTPScreen.swift in Sources */,
@@ -511,17 +584,21 @@
 				5C0228052C100EFA00D04DF2 /* ForgotUsernameResponse.swift in Sources */,
 				5C0227EC2C0F58AA00D04DF2 /* OTPViewModel.swift in Sources */,
 				5CBEADE42C0D9AE0001C1E02 /* ArtistSelectionModel.swift in Sources */,
+				5C7280922C11C74400BA9534 /* SongResponse.swift in Sources */,
 				5C0227FC2C0F91A400D04DF2 /* LoginAction.swift in Sources */,
 				5C0227F02C0F599000D04DF2 /* OTPResponse.swift in Sources */,
 				5C78B8B92C007251009AD656 /* GetStartedScreen.swift in Sources */,
 				5C0227FA2C0F915000D04DF2 /* LoginViewModel.swift in Sources */,
 				5C0227E52C0F480300D04DF2 /* SignUpResponse.swift in Sources */,
+				5C7280952C11C7A500BA9534 /* PublicSongsAction.swift in Sources */,
 				5C78B8BD2C00C0F9009AD656 /* SIgnUpScreen.swift in Sources */,
 				5C0227E32C0F47EF00D04DF2 /* SignUpRequest.swift in Sources */,
 				5C0227EA2C0F589900D04DF2 /* OTPAction.swift in Sources */,
 				5C0227C62C0F2BE100D04DF2 /* APIRequest.swift in Sources */,
+				5C72809C2C11D14F00BA9534 /* NetworkImage.swift in Sources */,
 				5CB7C8E72C083292001B8F15 /* LoginScreen.swift in Sources */,
 				5C0227EE2C0F58B900D04DF2 /* OTPRequest.swift in Sources */,
+				5C7280972C11C91800BA9534 /* SongRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +735,7 @@
 				DEVELOPMENT_TEAM = 57Y8VNA6WW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Soundly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -673,6 +751,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				a = "";
 			};
 			name = Debug;
 		};
@@ -687,6 +766,7 @@
 				DEVELOPMENT_TEAM = 57Y8VNA6WW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Soundly/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -702,6 +782,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				a = "";
 			};
 			name = Release;
 		};
@@ -737,6 +818,14 @@
 				minimumVersion = 4.0.1;
 			};
 		};
+		5C7280982C11CDC700BA9534 /* XCRemoteSwiftPackageReference "NetworkImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/NetworkImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -749,6 +838,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C0227D52C0F31A900D04DF2 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
+		};
+		5C7280992C11CDC800BA9534 /* NetworkImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C7280982C11CDC700BA9534 /* XCRemoteSwiftPackageReference "NetworkImage" */;
+			productName = NetworkImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
