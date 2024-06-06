@@ -16,12 +16,12 @@ struct HomePageScreen: View {
                         .frame(width: getScreenBounds().width * 0.9,height : getScreenBounds().width * 0.9)
                         .cornerRadius(40)
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                        .padding()
+                        .padding(EdgeInsets(.init(top: 0, leading: 10, bottom: 0,trailing: 10)))
                     HorizontalSongView()
                     HorizontalSongView()
                     HorizontalSongView()
                     HorizontalSongView()
-                                        Spacer()
+                    Spacer()
                 }
                 .toolbar {
                     ToolbarItem(placement: .principal) {
