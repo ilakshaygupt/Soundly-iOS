@@ -11,7 +11,7 @@ struct LoginScreen: View {
     @ObservedObject var viewModel = LoginViewModel()
     @State private var username: String = ""
     @FocusState private var isUsernameFieldFocused: Bool
-    
+
     var body: some View {
         if viewModel.isSuccess {
             OTPScreen(username: username, isPhoneNumber: nil, contactInfo: nil)

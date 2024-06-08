@@ -6,40 +6,54 @@
 //
 
 import SwiftUI
-
+import AVKit
 struct HomePageScreen: View {
+//    @ObservedObject var currentSong = CurrentSongViewModel.shared
+
     var body: some View {
         NavigationStack {
-            ScrollView{
+            ScrollView {
                 VStack {
-                SliderView()
-                    .frame(width: getScreenBounds().width * 0.9,height : getScreenBounds().width * 0.9)
-                    .cornerRadius(40)
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    .padding(EdgeInsets(.init(top: 0, leading: 10, bottom: 0,trailing: 10)))
-                    HorizontalSongView()
+                    SliderView()
+                        .frame(height: getScreenBounds().width * 0.9)
+                        .cornerRadius(40)
+                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                    HorizontalSongsView()
+//                    VStack {
+//                        Text(String(currentSong.isPlaying))
+//                        if let song = currentSong.currentSong {
+//                            Text("Now Playing:")
+//                            Text(song.name)
+//                                .font(.headline)
+//                        } else {
+//                            Text("No song is currently playing.")
+//                        }
+//                    }
                     Spacer()
                 }
+                .padding(5)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-
                         HStack {
-                            Text("Hey , Lakshay")
+                            Text("Hey, Lakshay")
                                 .font(.system(size: 28))
-
                             Spacer()
-
                             Image("Honey Singh")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .clipShape(Circle())
                         }
+                        .padding(.bottom,3)
                     }
-                }
+
+                }.navigationBarTitleDisplayMode(.inline)
             }
         }
     }
+    
 }
+
 
 #Preview {
     HomePageScreen()

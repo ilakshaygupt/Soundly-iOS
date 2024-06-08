@@ -7,6 +7,8 @@
 
 import SwiftUI
 struct GetStartedScreen: View {
+
+
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in

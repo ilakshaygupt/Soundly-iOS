@@ -24,15 +24,17 @@ struct LoginAction {
                parameters: parameters
            ) { data in
                if let response = try? JSONDecoder().decode(
-                   LoginResponse.self,
+                                LoginResponse.self,
                    from: data
                ) {
                    print(response)
                    completion(response)
                } else {
+
                    failure(.jsonDecoding)
                }
            } failure: { error in
+               print(error)
                failure(error)
            }
        }
