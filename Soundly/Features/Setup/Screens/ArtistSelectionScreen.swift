@@ -59,7 +59,7 @@ struct ArtistSelectionScreen: View {
                 Spacer()
                 HStack{
                     Spacer()
-                    NavigationLink(destination: HomePageScreen()){
+                    NavigationLink(destination: MainView()){
                         Text("Next")
                             .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
                             .bold()

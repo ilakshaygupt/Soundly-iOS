@@ -28,7 +28,7 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
         failure: @escaping FailureHandler
     ) {
         
-        let url = URL(string: "\(path)")
+        let url = URL(string: "https://soundly.weblakshay.tech\(path)")
         
         var request = URLRequest(url: url!)
         request.httpMethod = method.rawValue
@@ -46,10 +46,11 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
         
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if let data = data {
-                
+                print(data)
                 completion(data)
             } else {
                 if error != nil {
+                    print(APIError.response)
                     failure(APIError.response)
                 }
             }

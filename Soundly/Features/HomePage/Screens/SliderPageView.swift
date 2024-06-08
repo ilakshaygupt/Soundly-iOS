@@ -52,6 +52,6 @@ struct SliderPageView: View {
     }
 }
 
-//#Preview {
-//    SliderPageView()
-//}
+#Preview {
+    SliderPageView(page:SliderAlbums.albumsData[0])
+}
