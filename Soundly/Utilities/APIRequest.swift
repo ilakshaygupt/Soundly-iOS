@@ -43,14 +43,16 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
         if let parameters = parameters {
             request.httpBody = try? JSONEncoder().encode(parameters)
         }
-        
+        print(parameters)
+        print(url)
+
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if let data = data {
-                print(data)
+                
                 completion(data)
             } else {
                 if error != nil {
-                    print(APIError.response)
+
                     failure(APIError.response)
                 }
             }
