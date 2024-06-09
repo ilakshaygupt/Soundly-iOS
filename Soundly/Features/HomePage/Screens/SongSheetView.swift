@@ -12,6 +12,19 @@ struct SongSheetView: View {
     let player: AVPlayer
     let song: SongData
 
+
+    init(player: AVPlayer, song: SongData) {
+
+
+            self.player = player
+            self.song = song
+
+
+
+
+
+    }
+
     var body: some View {
         VStack {
 

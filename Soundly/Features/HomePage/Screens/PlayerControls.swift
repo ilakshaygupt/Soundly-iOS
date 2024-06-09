@@ -4,22 +4,35 @@
 //
 //  Created by Lakshay Gupta on 07/06/24.
 //
-
 import Foundation
 import SwiftUI
 import AVKit
 import Combine
 
 struct PlayerControls: View {
-    @State private var isDragging = false
     @StateObject var currentSong = CurrentSongViewModel.shared
     let song: SongData
-    let player: AVPlayer
+
 
     init(song: SongData, player: AVPlayer) {
         self.song = song
-        self.player = player
-        currentSong.currentSong = song
+        if currentSong.currentSong?.id != song.id {
+
+            if let player = currentSong.player {
+                player.pause()
+                currentSong.isPlaying = false
+            }
+            
+            currentSong.currentSong = song
+            currentSong.player = player
+            currentSong.isPlaying = true
+        }
+        else{
+            
+
+        }
+
+
     }
 
     var body: some View {
@@ -32,9 +45,9 @@ struct PlayerControls: View {
                     in: 0...song.durationInSeconds,
                     step: 1.0,
                     onEditingChanged: { editing in
-                        isDragging = editing
+                        currentSong.isDragging = editing
                         if !editing {
-                            player.seek(to: CMTime(seconds: currentSong.currentTime, preferredTimescale: 1))
+                            currentSong.player!.seek(to: CMTime(seconds: currentSong.currentTime, preferredTimescale: 1))
                         }
                     }
                 )
@@ -43,7 +56,7 @@ struct PlayerControls: View {
                     .font(.caption)
             }
 
-            HStack (spacing: 25) {
+            HStack(spacing: 25) {
                 Button(action: {
                     // Implement shuffle action
                 }) {
@@ -62,9 +75,9 @@ struct PlayerControls: View {
 
                 Button(action: {
                     if currentSong.isPlaying {
-                        player.pause()
+                        currentSong.player!.pause()
                     } else {
-                        player.play()
+                        currentSong.player!.play()
                     }
                     currentSong.isPlaying.toggle()
                 }) {
@@ -91,8 +104,8 @@ struct PlayerControls: View {
             }
             .padding(.top)
         }
-        .onReceive(player.currentTimePublisher) { time in
-            if !isDragging {
+        .onReceive(currentSong.player!.currentTimePublisher) { time in
+            if !currentSong.isDragging {
                 currentSong.currentTime = time
             }
         }

@@ -33,21 +33,7 @@ struct HomePageScreen: View {
                     Spacer()
                 }
                 .padding(5)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Text("Hey, Lakshay")
-                                .font(.system(size: 28))
-                            Spacer()
-                            Image("Honey Singh")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .clipShape(Circle())
-                        }
-                        .padding(.bottom,3)
-                    }
-
-                }.navigationBarTitleDisplayMode(.inline)
+                
             }
         }
     }

@@ -7,39 +7,42 @@
 import SwiftUI
 
 struct SearchScreen: View {
-    @ObservedObject var viewModel = SongSeachViewModel()
-    
+    @StateObject var viewModel = SongSeachViewModel()
+
     var body: some View {
         NavigationStack {
-            VStack {
-                SearchBar(text: $viewModel.searchText, onSearch: viewModel.searchSongs)
-                Spacer()
-                Text("Results for: \(viewModel.searchText)")
-                Spacer()
-                ScrollView {
-                    LazyVStack(spacing: 20) {
-                        ForEach(viewModel.songs, id: \.id) { song in
-                            SongHorizontalView(song: song)
-                            Divider().background(Color.black).padding(.horizontal)
+            ZStack{
+                VStack {
+                    SearchBar(text: $viewModel.searchText, onSearch: viewModel.searchSongs)
+                    Spacer()
+                    Text("Results for: \(viewModel.searchText)")
+                    Spacer()
+                    ScrollView {
+                        LazyVStack(spacing: 20) {
+                            ForEach(viewModel.songs, id: \.id) { song in
+                                SongHorizontalView(song: song)
+                                Divider().background(Color.black).padding(.horizontal)
+                            }
                         }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Text("Hey, Lakshay")
+                                .font(.system(size: 28))
+                            Spacer()
+                            Image("Honey Singh")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(Circle())
+                        }
+                        .padding(.bottom, 3)
+                    }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Hey, Lakshay")
-                            .font(.system(size: 28))
-                        Spacer()
-                        Image("Honey Singh")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                    }
-                    .padding(.bottom, 3)
-                }
-            }
+            
         }
     }
 }

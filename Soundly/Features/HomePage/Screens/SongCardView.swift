@@ -8,7 +8,7 @@ struct SongCardView: View {
     @State private var isLoading = true
     @State private var player: AVPlayer?
     @State private var songData: SongData?
-    
+    @ObservedObject var currentSongViewModel = CurrentSongViewModel.shared
     var body: some View {
         VStack {
             if isLoading {
@@ -50,34 +50,45 @@ struct SongCardView: View {
     }
 
     func fetchSongDetails() {
-        guard let url = URL(string: "https://soundly.weblakshay.tech/music/api/getsong/\(song.id)/") else { return }
-
-        var request = URLRequest(url: url)
-        request.addValue("Bearer \(Auth.shared.getAccessToken() ?? "")", forHTTPHeaderField: "Authorization")
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print("No data in response: \(error?.localizedDescription ?? "Unknown error")")
-                return
+        if currentSongViewModel.currentSong != nil && currentSongViewModel.currentSong!.id == self.song.id {
+            DispatchQueue.main.async {
+                self.songData = CurrentSongViewModel.shared.currentSong
+                self.showingSheet = true
             }
 
-            do {
+        }
 
-                let decodedResponse = try JSONDecoder().decode(SongDetailsResponse.self, from: data)
+        else{
 
-                if let songData = decodedResponse.data {
-                    DispatchQueue.main.async {
-                        player = AVPlayer(url: URL(string: songData.song_url)!)
-                        self.songData = songData
-                        player?.play()
-                        showingSheet = true
-                    }
+
+            guard let url = URL(string: "https://soundly.weblakshay.tech/music/api/getsong/\(song.id)/") else { return }
+
+            var request = URLRequest(url: url)
+            request.addValue("Bearer \(Auth.shared.getAccessToken() ?? "")", forHTTPHeaderField: "Authorization")
+
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data else {
+                    print("No data in response: \(error?.localizedDescription ?? "Unknown error")")
+                    return
                 }
-            } catch {
-                print(1)
-                print("Error decoding response: \(error.localizedDescription)")
-            }
-        }.resume()
+
+                do {
+
+                    let decodedResponse = try JSONDecoder().decode(SongDetailsResponse.self, from: data)
+
+                    if let songData = decodedResponse.data {
+                        DispatchQueue.main.async {
+                            self.player = AVPlayer(url: URL(string: songData.song_url)!)
+                            self.songData = songData
+                            self.player?.play()
+                            self.showingSheet = true
+                        }
+                    }
+                } catch {
+                    print(1)
+                    print("Error decoding response: \(error.localizedDescription)")
+                }
+            }.resume()}
     }
 }
 
