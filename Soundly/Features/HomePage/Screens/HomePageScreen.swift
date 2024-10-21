@@ -8,7 +8,6 @@
 import SwiftUI
 import AVKit
 struct HomePageScreen: View {
-//    @ObservedObject var currentSong = CurrentSongViewModel.shared
 
     var body: some View {
         NavigationStack {
@@ -20,16 +19,7 @@ struct HomePageScreen: View {
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     HorizontalSongsView()
-//                    VStack {
-//                        Text(String(currentSong.isPlaying))
-//                        if let song = currentSong.currentSong {
-//                            Text("Now Playing:")
-//                            Text(song.name)
-//                                .font(.headline)
-//                        } else {
-//                            Text("No song is currently playing.")
-//                        }
-//                    }
+
                     Spacer()
                 }
                 .padding(5)

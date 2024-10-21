@@ -10,8 +10,8 @@ import NetworkImage
 
 
 struct HorizontalSongsView: View {
-    @StateObject private var viewModel = HorizontalSongViewModel()
-    
+    @ObservedObject private var viewModel = HorizontalSongViewModel()
+
 
     var body: some View {
         VStack {
@@ -19,7 +19,6 @@ struct HorizontalSongsView: View {
                 Text("FOR YOU")
                     .font(.system(size: 26))
                     .bold()
-
                 Spacer()
             }
             .padding()
@@ -30,7 +29,6 @@ struct HorizontalSongsView: View {
                             SongCardView(song: song)
                         }
                     }
-
                 }
             }
         }

@@ -1,3 +1,9 @@
+//
+//  SongCardView.swift
+//  Soundly
+//
+//  Created by Lakshay Gupta on 07/06/24.
+//
 import SwiftUI
 import AVKit
 import Combine
@@ -24,7 +30,7 @@ struct SongCardView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                         .controlSize(.large)
                 }
-                Text(song.artist)
+                Text(song.name)
                     .font(.title2)
             }
         }
@@ -34,8 +40,6 @@ struct SongCardView: View {
         }
         .sheet(isPresented: $showingSheet) {
             if let player = player, let songData = songData {
-
-
                 SongSheetView(player: player, song: songData)
             }
         }
