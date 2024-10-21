@@ -86,7 +86,7 @@ struct MainView: View {
                 .onAppear {
                     UITabBar.appearance().barTintColor = UIColor(red: 213/255, green: 234/255, blue: 231/255, alpha: 1)
                     UITabBarAppearance().backgroundColor = UIColor(red: 213/255, green: 234/255, blue: 231/255, alpha: 1)
-                    currentSong.startTimer()
+//                    currentSong.startTimer()
                 }
                 
                 .accentColor(Color(red: 0/255, green: 139/255, blue: 139/255))

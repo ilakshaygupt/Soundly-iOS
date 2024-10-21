@@ -14,15 +14,8 @@ struct SongSheetView: View {
 
 
     init(player: AVPlayer, song: SongData) {
-
-
             self.player = player
             self.song = song
-
-
-
-
-
     }
 
     var body: some View {

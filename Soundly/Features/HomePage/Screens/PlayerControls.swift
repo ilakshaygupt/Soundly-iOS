@@ -13,7 +13,6 @@ struct PlayerControls: View {
     @StateObject var currentSong = CurrentSongViewModel.shared
     let song: SongData
 
-
     init(song: SongData, player: AVPlayer) {
         self.song = song
         if currentSong.currentSong?.id != song.id {
