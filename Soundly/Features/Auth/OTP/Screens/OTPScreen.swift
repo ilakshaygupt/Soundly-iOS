@@ -14,6 +14,7 @@ struct OTPScreen: View {
     let isPhoneNumber: Bool?
     let contactInfo: String?
     @FocusState private var isOTPFieldFocused: Bool
+    private let numberOfFieldsInOTP = 4
 
     var body: some View {
         if viewModel.success {
@@ -36,17 +37,29 @@ struct OTPScreen: View {
                             .font(.system(size: 14))
                             .multilineTextAlignment(.center)
 
-                        TextField("Enter OTP", text: $otp)
-                            .keyboardType(.numberPad)
-                            .padding()
-                            .background(Color.clear)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(!isOTPFieldFocused ? Color.gray : Color.black, lineWidth: 1)
-                            )
-                            .cornerRadius(10)
+//                        TextField("Enter OTP", text: $otp)
+//                            .keyboardType(.numberPad)
+//                            .padding()
+//                            .background(Color.clear)
+//                            .overlay(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .stroke(!isOTPFieldFocused ? Color.gray : Color.black, lineWidth: 1)
+//                            )
+//                            .cornerRadius(10)
+//                            .focused($isOTPFieldFocused)12313
+//                            .frame(width: getScreenBounds().width * 0.8)
+                        OTPFieldView(numberOfFields: numberOfFieldsInOTP, otp: $otp)
+                            .onChange(of: otp) { newOtp in
+                                if newOtp.count == numberOfFieldsInOTP {
+                                    // Verify OTP
+                                }
+                            }
+                        
                             .focused($isOTPFieldFocused)
-                            .frame(width: getScreenBounds().width * 0.8)
+
+
+
+
 
                         Button(action: {
                             viewModel.otp = otp
@@ -55,7 +68,7 @@ struct OTPScreen: View {
                             if viewModel.isLoading {
                                    ProgressView()
                                        .progressViewStyle(CircularProgressViewStyle())
-                                       .foregroundColor(.white)
+                                           .foregroundColor(.white)
                                } else {
                                    Text("Send")
                                        .frame(width: getScreenBounds().width * 0.8)
@@ -70,9 +83,12 @@ struct OTPScreen: View {
                            
                             
                         }
+                        .frame(width: getScreenBounds().width * 0.8,height: getScreenBounds().height * 0.09)
+
                         .alert(isPresented: $viewModel.isErrorToast) {
                                                     Alert(title: Text("Error"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("OK")))
                                                 }
+
                     }
                     .frame(width: getScreenBounds().width, height: getScreenBounds().height * 0.5)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
