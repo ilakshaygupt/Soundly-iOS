@@ -15,7 +15,6 @@ struct GetStartedScreen: View {
         NavigationStack {
             if isGetStartedClicked{
                 LoginScreen()
-
             }
             else{
                 GeometryReader { geometry in

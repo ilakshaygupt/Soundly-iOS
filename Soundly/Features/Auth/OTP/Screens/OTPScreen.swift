@@ -37,17 +37,6 @@ struct OTPScreen: View {
                             .font(.system(size: 14))
                             .multilineTextAlignment(.center)
 
-//                        TextField("Enter OTP", text: $otp)
-//                            .keyboardType(.numberPad)
-//                            .padding()
-//                            .background(Color.clear)
-//                            .overlay(
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .stroke(!isOTPFieldFocused ? Color.gray : Color.black, lineWidth: 1)
-//                            )
-//                            .cornerRadius(10)
-//                            .focused($isOTPFieldFocused)12313
-//                            .frame(width: getScreenBounds().width * 0.8)
                         OTPFieldView(numberOfFields: numberOfFieldsInOTP, otp: $otp)
                             .onChange(of: otp) { newOtp in
                                 if newOtp.count == numberOfFieldsInOTP {

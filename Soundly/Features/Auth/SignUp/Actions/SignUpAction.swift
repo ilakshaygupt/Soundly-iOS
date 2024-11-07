@@ -31,6 +31,7 @@ struct SignupEmailAction {
                    failure(.jsonDecoding)
                }
            } failure: { error in
+               print(error)
                failure(error)
            }
        }

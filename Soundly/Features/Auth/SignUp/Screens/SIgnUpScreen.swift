@@ -17,11 +17,15 @@ struct SignUpScreen: View {
     @FocusState private var isUsernameFieldFocused: Bool
     @FocusState private var isPhonenumberFieldFocused: Bool
     @FocusState private var isEmailFieldFocused: Bool
+    @State private var isLoginClicked = false
 
     var body: some View {
         if isPhoneNumber ? phoneViewModel.success : emailViewModel.success {
                 OTPScreen(username: username, isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)
             }
+        else if isLoginClicked {
+            LoginScreen()
+        }
         else{
             NavigationStack {
                 VStack {
@@ -151,18 +155,22 @@ struct SignUpScreen: View {
                             Text("Soundly")
                                 .font(.system(size: 28))
                             
-                            NavigationLink(destination:LoginScreen()){
+                            Button(
+                                action : {
+                                    isLoginClicked.toggle()
+                                }
+
+                            ){
                                 Text("Login")
                                     .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
                                     .bold()
                                     .font(.system(size: 20))
-                                
+
                                     .padding(.leading, 20)
                             }
                         }
                     }
                 }
-                
             }
         }
     }

@@ -14,83 +14,53 @@ import Combine
 
 struct MainView: View {
     @ObservedObject var currentSong = CurrentSongViewModel.shared
+    init() {
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+    }
+
 
     var body: some View {
         NavigationStack {
             ZStack {
                 TabView {
-                    HomePageScreen()
-                        .tabItem {
-                            Image(systemName: "house.fill")
-                            Text("Home")
-                        }
-                    LibraryScreen()
+                    NowPlayingBars(content:   HomePageScreen()
+                      )
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                    .zIndex(1)
+
+                    NowPlayingBars(content: LibraryScreen())
                         .tabItem {
                             Image(systemName: "books.vertical.fill")
                             Text("Library")
                         }
-                    SearchScreen()
+                        .zIndex(2)
+                    NowPlayingBars(content: SearchScreen())
                         .tabItem {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
                         }
-                    GameView()
+                        .zIndex(3)
+                    NowPlayingBars(content: GameView())
                         .tabItem {
                             Image(systemName: "gamecontroller.fill")
                             Text("Game")
                         }
-                }
-                VStack {
-                    Spacer()
-                    HStack {
-                        Text(formatTime(seconds: currentSong.currentTime))
-                            .font(.caption)
-                        Button(action: {
-                            if currentSong.isPlaying {
-                                currentSong.pause()
-                            } else {
-                                currentSong.play()
-                            }
-                        }) {
-                            Image(systemName: currentSong.isPlaying ? "pause.circle" : "play.circle")
-                                .font(.system(size: 40))
-                                .accentColor(.black)
-                        }
-                        if let song = currentSong.currentSong {
-                            Text("Now Playing:")
-                            Text(song.name)
-                                .font(.headline)
-                        } else {
-                            Text("No song is currently playing.")
-                        }
-                        Slider(
-                            value: $currentSong.currentTime,
-                            in: 0...(currentSong.currentSong?.durationInSeconds ?? 1.0),
-                            step: 1.0,
-                            onEditingChanged: { editing in
-                                currentSong.isDragging = editing
-                                if !editing {
-                                    currentSong.seek(to: currentSong.currentTime)
-                                }
-                            }
-                        )
-                        .accentColor(Color(red: 0/255, green: 139/255, blue: 139/255, opacity: 1))
-                        Text(formatTime(seconds: currentSong.currentSong?.durationInSeconds ?? 0))
-                            .font(.caption)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 40)
-                    .background(.teal)
-                    .foregroundColor(.black)
-                    .padding(.bottom, 60)
-                }
-                .onAppear {
-                    UITabBar.appearance().barTintColor = UIColor(red: 213/255, green: 234/255, blue: 231/255, alpha: 1)
-                    UITabBarAppearance().backgroundColor = UIColor(red: 213/255, green: 234/255, blue: 231/255, alpha: 1)
-//                    currentSong.startTimer()
+                        .zIndex(4)
                 }
                 
+
                 .accentColor(Color(red: 0/255, green: 139/255, blue: 139/255))
             }
+
+
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
@@ -107,6 +77,7 @@ struct MainView: View {
 
             }.navigationBarTitleDisplayMode(.inline)
         }
+        
     }
 
     private func formatTime(seconds: Double) -> String {
@@ -115,7 +86,18 @@ struct MainView: View {
         return String(format: "%02d:%02d", minutes, seconds)
     }
 }
+struct NowPlayingBars<Content: View>: View {
+    var content: Content
 
+    @ViewBuilder var body: some View {
+        ZStack(alignment: .bottom) {
+            content
+            NowPlayingBar()
+        }
+
+    }
+
+}
 struct GameView: View {
     var body: some View {
         Text("Game")

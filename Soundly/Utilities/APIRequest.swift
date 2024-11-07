@@ -52,6 +52,7 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
                 completion(data)
             } else {
                 if error != nil {
+                    print(APIError.response)
 
                     failure(APIError.response)
                 }
