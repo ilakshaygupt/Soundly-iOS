@@ -30,6 +30,7 @@
 		5C02280A2C100F2800D04DF2 /* ForgotUsernameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0228092C100F2800D04DF2 /* ForgotUsernameViewModel.swift */; };
 		5C022C8A2C15D743007842D3 /* SongQueueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C022C892C15D743007842D3 /* SongQueueViewModel.swift */; };
 		5C022C8C2C15D810007842D3 /* CreatePlaylistScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C022C8B2C15D810007842D3 /* CreatePlaylistScreen.swift */; };
+		5C091FDC2CDD324D002088C5 /* NowPlayingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C091FDB2CDD3243002088C5 /* NowPlayingBar.swift */; };
 		5C0CE7502C1392AC00EBD8B4 /* GetSongAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0CE74F2C1392AC00EBD8B4 /* GetSongAction.swift */; };
 		5C0CE7522C13934C00EBD8B4 /* SongDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0CE7512C13934C00EBD8B4 /* SongDetailRequest.swift */; };
 		5C0CE7562C13A24800EBD8B4 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0CE7552C13A24700EBD8B4 /* SearchBarView.swift */; };
@@ -161,6 +162,7 @@
 		5C0228092C100F2800D04DF2 /* ForgotUsernameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotUsernameViewModel.swift; sourceTree = "<group>"; };
 		5C022C892C15D743007842D3 /* SongQueueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongQueueViewModel.swift; sourceTree = "<group>"; };
 		5C022C8B2C15D810007842D3 /* CreatePlaylistScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlaylistScreen.swift; sourceTree = "<group>"; };
+		5C091FDB2CDD3243002088C5 /* NowPlayingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingBar.swift; sourceTree = "<group>"; };
 		5C0CE74F2C1392AC00EBD8B4 /* GetSongAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSongAction.swift; sourceTree = "<group>"; };
 		5C0CE7512C13934C00EBD8B4 /* SongDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailRequest.swift; sourceTree = "<group>"; };
 		5C0CE7552C13A24700EBD8B4 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 		5CBEADE82C0DD3FA001C1E02 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5C091FDB2CDD3243002088C5 /* NowPlayingBar.swift */,
 				5C2799E22C132E5300E81D5C /* SearchScreen.swift */,
 				5C2799E82C1331E800E81D5C /* SongHorizontalView.swift */,
 				5C2799E02C13260900E81D5C /* MainView.swift */,
@@ -809,6 +812,7 @@
 				5CD9D9272C12452000C46159 /* HorizontalSongViewModel.swift in Sources */,
 				5C0CE7562C13A24800EBD8B4 /* SearchBarView.swift in Sources */,
 				5CD9D92B2C1255BE00C46159 /* PlayerControls.swift in Sources */,
+				5C091FDC2CDD324D002088C5 /* NowPlayingBar.swift in Sources */,
 				5C78B8A52C006A36009AD656 /* SoundlyApp.swift in Sources */,
 				5C2799E72C1330BB00E81D5C /* SongSeachAction.swift in Sources */,
 				5CA270912C14CDBE00A56E19 /* PlaylistSongsViewModel.swift in Sources */,

@@ -13,10 +13,14 @@ struct LoginScreen: View {
     @ObservedObject var viewModel = LoginViewModel()
     @State private var username: String = ""
     @FocusState private var isUsernameFieldFocused: Bool
+    @State private var isSignUpClicked = false
 
     var body: some View {
         if viewModel.isSuccess {
             OTPScreen(username: username, isPhoneNumber: nil, contactInfo: nil)
+        }
+        else if isSignUpClicked {
+            SignUpScreen()
         }
         else{
             NavigationStack {
@@ -25,7 +29,7 @@ struct LoginScreen: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(EdgeInsets(top: 100, leading: 0, bottom: 10, trailing: 0))
-
+                    Spacer()
                     VStack {
                         Text("Login")
                             .font(.system(size: 28))
@@ -93,8 +97,6 @@ struct LoginScreen: View {
                             }
                         }
                         .frame(width: getScreenBounds().width * 0.8,height: getScreenBounds().height*0.1)
-
-
                     }
                     .frame(width: getScreenBounds().width,height:getScreenBounds().height * 0.5)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -109,7 +111,9 @@ struct LoginScreen: View {
                             Image("S")
                             Text("Soundly")
                                 .font(.system(size: 28))
-                            NavigationLink(destination:SignUpScreen()){
+                            Button( action : {
+                                isSignUpClicked.toggle()
+                            }){
                                 Text("Sign Up")
                                     .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
                                     .bold()
