@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUICore
 
 class SignupEmailViewModel: ObservableObject {
     
@@ -16,25 +17,30 @@ class SignupEmailViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var isErrorToast: Bool = false
     @Published var error: APIError?
-    
+    @EnvironmentObject private var navigationState: NavigationState
+
+
     func SignUp() {
         self.error = nil
-        self.isLoading = false
         self.isErrorToast = false
-        
+        self.errorMessage = ""
+        self.isLoading = true
+
         SignupEmailAction(
             parameters: SignupEmailRequest(
                 email: email, username: username
             )
         ).call { response in
-            self.error = nil
+//            self.error = nil
             DispatchQueue.main.async {
                 if response.success {
                     Auth.shared.setSignUpUsername(username: self.username)
                     Auth.shared.setSignUpEmail(email: self.email)
-//                    Auth.shared.setSignUpPhoneNumber(phoneNumber: <#T##String#>)
                     self.success = true
                     self.isLoading = false
+                    self.success = true
+                    self.isLoading = false
+
                 }
                 else{
                     self.success = false
@@ -63,19 +69,25 @@ class SignupPhoneViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var isErrorToast: Bool = false
     @Published var error: APIError?
-    
+    @EnvironmentObject private var navigationState: NavigationState
     func SignUp() {
-        
+        self.error = nil
+        self.isErrorToast = false
+        self.errorMessage = ""
+        self.isLoading = true
+
         SignupPhoneAction(
             parameters: SignupPhoneRequest(
                 phone_number: phone_number, username: username
             )
         ).call { response in
-            self.error = nil
+//            self.error = nil
             DispatchQueue.main.async {
                 if response.success {
                     Auth.shared.setSignUpUsername(username: self.username)
                     Auth.shared.setSignUpPhoneNumber(phoneNumber: self.phone_number)
+                    self.success = true
+                    self.isLoading = false
                     self.success = true
                     self.isLoading = false
                 } else{

@@ -15,12 +15,13 @@ struct OTPScreen: View {
     let contactInfo: String?
     @FocusState private var isOTPFieldFocused: Bool
     private let numberOfFieldsInOTP = 4
+    @EnvironmentObject private var navigationState: NavigationState
 
     var body: some View {
         if viewModel.success {
             LanguageSelectionScreen()
         } else {
-            NavigationStack {
+
                 VStack(alignment: .center) {
                     Image("OTPIllustration")
                         .resizable()
@@ -106,7 +107,7 @@ struct OTPScreen: View {
                         }
                     }
                 }
-            }
+
           
         }
     }

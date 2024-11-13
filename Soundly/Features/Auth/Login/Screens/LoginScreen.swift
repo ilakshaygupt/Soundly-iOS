@@ -13,17 +13,16 @@ struct LoginScreen: View {
     @ObservedObject var viewModel = LoginViewModel()
     @State private var username: String = ""
     @FocusState private var isUsernameFieldFocused: Bool
-    @State private var isSignUpClicked = false
+    @EnvironmentObject private var navigationState: NavigationState
+
 
     var body: some View {
-        if viewModel.isSuccess {
-            OTPScreen(username: username, isPhoneNumber: nil, contactInfo: nil)
-        }
-        else if isSignUpClicked {
-            SignUpScreen()
-        }
-        else{
-            NavigationStack {
+//        if viewModel.success {
+//            OTPScreen(username: username, isPhoneNumber: nil, contactInfo: nil)
+//        }
+
+//        else{
+
                 VStack {
                     Image("SignIn")
                         .resizable()
@@ -68,8 +67,10 @@ struct LoginScreen: View {
                         HStack{
                             Spacer()
 
-                            NavigationLink (
-                                destination: ForgotUsername()
+                            Button (
+                                action :{
+                                    navigationState.routes.append(.forgotUsername)
+                                }
                             ){
                                 Text("Forgot Username?").padding(.trailing,10)
                             }
@@ -104,27 +105,42 @@ struct LoginScreen: View {
                     .cornerRadius(50)
                     .padding()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Spacer()
-                            Image("S")
-                            Text("Soundly")
-                                .font(.system(size: 28))
-                            Button( action : {
-                                isSignUpClicked.toggle()
-                            }){
-                                Text("Sign Up")
-                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
-                                    .bold()
-                                    .font(.system(size: 20))
-                                    .padding(.leading, 20)
-                            }
-                        }
+                .alert(isPresented: $viewModel.isErrorToast) {
+                    Alert(title: Text("Error"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("OK")))
+                }
+                .onChange(of: viewModel.success) { oldValue, newValue in
+                    if newValue {
+                        let otpDefault = OTPScreenDefault(
+                            username: username,
+                            isPhoneNumber: false,
+                            contactInfo: ""
+                        )
+                        navigationState.routes.append(.oTPScreen(otpDefault))
                     }
                 }
-            }
-        }
+//                .toolbar {
+//                    ToolbarItem(placement: .principal) {
+//                        HStack {
+//                            Spacer()
+//                            Image("S")
+//                            Text("Soundly")
+//                                .font(.system(size: 28))
+//                            Button( action : {
+//                                withAnimation{
+//                                    navigationState.replace(with: .signUpScreen)
+//                                }
+//                            }){
+//                                Text("Sign Up")
+//                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
+//                                    .bold()
+//                                    .font(.system(size: 20))
+//                                    .padding(.leading, 20)
+//                            }
+//                        }
+//                    }
+//                }
+
+
     }
 }
 
