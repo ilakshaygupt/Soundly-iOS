@@ -79,13 +79,8 @@ struct MainView: View {
         }
         
     }
-
-    private func formatTime(seconds: Double) -> String {
-        let minutes = Int(seconds) / 60
-        let seconds = Int(seconds) % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
 }
+
 struct NowPlayingBars<Content: View>: View {
     var content: Content
 
@@ -98,6 +93,7 @@ struct NowPlayingBars<Content: View>: View {
     }
 
 }
+
 struct GameView: View {
     var body: some View {
         Text("Game")

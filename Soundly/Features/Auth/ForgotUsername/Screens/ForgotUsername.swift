@@ -12,6 +12,7 @@ struct ForgotUsername: View {
     @State private var isPhoneNumber: Bool = true
     @FocusState private var isPhonenumberFieldFocused: Bool
     @FocusState private var isEmailFieldFocused: Bool
+    @EnvironmentObject private var navigationState: NavigationState
 
     var body: some View {
         
@@ -24,7 +25,7 @@ struct ForgotUsername: View {
             
         }
         else{
-            NavigationStack {
+
                 VStack {
                     Image("SignIn")
                         .resizable()
@@ -63,7 +64,7 @@ struct ForgotUsername: View {
                                     Text("via \(isPhoneNumber ? "Email" : "Phone")")
                                         .foregroundColor(.teal)
                                         .bold()
-                                        .font(.system(size: 10))
+                                        .font(.system(size: 12))
                                         .textInputAutocapitalization(.never)
                                 }
                             }
@@ -142,26 +143,26 @@ struct ForgotUsername: View {
                     .cornerRadius(50)
                     .padding()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .automatic) {
-                        HStack {
-                            Spacer()
-                            Image("S")
-                            Text("Soundly")
-                                .font(.system(size: 28))
-                            
-                            Button {
-                                // action
-                            } label: {
-                                Text("Login")
-                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
-                                    .bold()
-                                    .font(.system(size: 20))
-                            }
-                            .padding(.leading, 40)
-                        }
-                    }
-                }
+//                .toolbar {
+//                    ToolbarItem(placement: .automatic) {
+//                        HStack {
+//                            Spacer()
+//                            Image("S")
+//                            Text("Soundly")
+//                                .font(.system(size: 28))
+//                            
+//                            Button {
+//                                // action
+//                            } label: {
+//                                Text("Login")
+//                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
+//                                    .bold()
+//                                    .font(.system(size: 20))
+//                            }
+//                            .padding(.leading, 40)
+//                        }
+//                    }
+//                }
                 
                 //            NavigationLink(
                 //                destination: OTPScreen(
@@ -176,8 +177,8 @@ struct ForgotUsername: View {
                 //            ) {
                 //                EmptyView()
                 //            }
-            }
-            .ignoresSafeArea(.keyboard)
+
+
         }}
 }
 

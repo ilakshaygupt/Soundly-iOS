@@ -12,7 +12,7 @@ class LoginViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var error: APIError?
     @Published var isOTPRequested: Bool = false
-    @Published var isSuccess: Bool = false
+    @Published var success: Bool = false
     @Published var isErrorToast: Bool = false
     @Published var errorMessage = ""
     
@@ -27,13 +27,15 @@ class LoginViewModel: ObservableObject {
                 if response.success {
                     Auth.shared.setSignUpUsername(username: self.username)
                     self.isOTPRequested = true
+                    self.success = true
                     self.isLoading = false
-                    self.isSuccess = true
+                    self.success = true
+                    self.isLoading = false
                 } else {
         
-                    self.isSuccess = false
-                    self.isErrorToast = true
+                    self.success = false
                     self.errorMessage = response.message
+                    self.isErrorToast = true
                     self.isLoading = false
                 }
             }

@@ -18,16 +18,9 @@ struct SignUpScreen: View {
     @FocusState private var isPhonenumberFieldFocused: Bool
     @FocusState private var isEmailFieldFocused: Bool
     @State private var isLoginClicked = false
+    @EnvironmentObject private var navigationState: NavigationState
 
     var body: some View {
-        if isPhoneNumber ? phoneViewModel.success : emailViewModel.success {
-                OTPScreen(username: username, isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)
-            }
-        else if isLoginClicked {
-            LoginScreen()
-        }
-        else{
-            NavigationStack {
                 VStack {
                     Image("SignIn")
                         .resizable()
@@ -38,11 +31,11 @@ struct SignUpScreen: View {
                             .font(.system(size: 28))
                             .bold()
                             .padding()
-                        
+
                         HStack {
                             Text("Welcome To")
                                 .font(.system(size: 26))
-                            
+
                             Text("Soundly")
                                 .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
                                 .font(.system(size: 26))
@@ -51,7 +44,7 @@ struct SignUpScreen: View {
                         VStack(alignment: .leading) {
                             Text("Username")
                                 .font(.system(size: 14))
-                            
+
                             TextField("Enter your username", text: $username)
                                 .padding()
                                 .background(Color.clear)
@@ -63,14 +56,14 @@ struct SignUpScreen: View {
                                 .padding(.bottom, 10)
                                 .focused($isUsernameFieldFocused)
                                 .textInputAutocapitalization(.never)
-                                
-                            
+
+
                             HStack {
                                 Text(isPhoneNumber ? "Phone Number" : "Email")
                                     .font(.system(size: 14))
-                                
+
                                 Spacer()
-                                
+
                                 Button(action: {
                                     isPhoneNumber.toggle()
                                 }) {
@@ -80,7 +73,7 @@ struct SignUpScreen: View {
                                         .bold()
                                 }
                             }
-                            
+
                             if isPhoneNumber {
                                 TextField("Enter your phone number", text: $phoneNumber)
                                     .padding()
@@ -105,23 +98,33 @@ struct SignUpScreen: View {
                             }
                         }
                         .padding()
-                        
+
                         Button(action: {
                             if isPhoneNumber {
-                                  phoneViewModel.username = username
-                                  phoneViewModel.phone_number = phoneNumber
-                                
-                                  phoneViewModel.SignUp()
-                              } else {
-                                  emailViewModel.username = username
-                                  emailViewModel.email = email
-                                  emailViewModel.SignUp()
-                              }
+                                phoneViewModel.username = username
+                                phoneViewModel.phone_number = phoneNumber
+
+                                phoneViewModel.SignUp()
+                            } else {
+                                emailViewModel.username = username
+                                emailViewModel.email = email
+                                emailViewModel.SignUp()
+                            }
+
+
+//                            if isPhoneNumber ? phoneViewModel.success : emailViewModel.success {
+//                                let otpData = OTPScreenDefault(username: username, isPhoneNumber: isPhoneNumber, contactInfo: isPhoneNumber ? phoneNumber : email)
+////                                DispatchQueue.main.sync {
+//                                    navigationState.routes.append(.oTPScreen(otpData))
+////                                }
+//                            }
+
+
                         }) {
                             if isPhoneNumber ? phoneViewModel.isLoading : emailViewModel.isLoading {
-                                                        ProgressView()
-                                                            .frame(width: 320)
-                                                            .padding()
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .foregroundColor(.white)
                             } else {
                                 Text("Continue")
                                     .frame(width:320)
@@ -135,44 +138,68 @@ struct SignUpScreen: View {
                         }
                         .alert(isPresented: isPhoneNumber ? $phoneViewModel.isErrorToast : $emailViewModel.isErrorToast) {
                             Alert(title: Text("Error"), message: Text(isPhoneNumber ? phoneViewModel.errorMessage : emailViewModel.errorMessage), dismissButton: .default(Text("OK")))
-                                                }
-                        
-                 
+                        }
+
+
                         Spacer()
                     }
-                    
+
                     .frame(width: getScreenBounds().width,height:getScreenBounds().height * 0.5)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(red: 213/255, green: 234/255, blue: 234/255, opacity: 1.0))
                     .cornerRadius(50)
                     .padding()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Spacer()
-                            Image("S")
-                            Text("Soundly")
-                                .font(.system(size: 28))
-                            
-                            Button(
-                                action : {
-                                    isLoginClicked.toggle()
-                                }
-
-                            ){
-                                Text("Login")
-                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
-                                    .bold()
-                                    .font(.system(size: 20))
-
-                                    .padding(.leading, 20)
-                            }
-                        }
+                .onChange(of: phoneViewModel.success) { oldValue, newValue in
+                    if newValue {
+                        let otpData = OTPScreenDefault(
+                            username: username,
+                            isPhoneNumber: true,
+                            contactInfo: phoneNumber
+                        )
+                        navigationState.routes.append(.oTPScreen(otpData))
                     }
                 }
-            }
-        }
+                .onChange(of: emailViewModel.success) { oldValue, newValue in
+                    if newValue {
+                        let otpData = OTPScreenDefault(
+                            username: username,
+                            isPhoneNumber: false,
+                            contactInfo: email
+                        )
+                        navigationState.routes.append(.oTPScreen(otpData))
+                    }
+                }
+
+
+
+//                .toolbar {
+//                    ToolbarItem(placement: .principal) {
+//                        HStack {
+//                            Spacer()
+//                            Image("S")
+//                            Text("Soundly")
+//                                .font(.system(size: 28))
+//                            
+//                            Button(
+//                                action : {
+//                                    withAnimation{
+//                                        navigationState.replace(with: .loginScreen)
+//                                    }
+//                                }
+//                            ){
+//                                Text("Login")
+//                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
+//                                    .bold()
+//                                    .font(.system(size: 20))
+//
+//                                    .padding(.leading, 20)
+//                            }
+//                        }
+//                    }
+//                }
+
+
     }
     
 }

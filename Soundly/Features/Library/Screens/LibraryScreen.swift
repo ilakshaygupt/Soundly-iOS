@@ -23,7 +23,7 @@ struct LibraryScreen: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(Array(viewModel.allPlaylists.indices), id: \.self) { index in
-                            NavigationLink(destination: PlaylistDetailView(playlist: viewModel.allPlaylists[index])) {
+                            NavigationLink(destination:ContentContainer( content:  PlaylistDetailView(playlist: viewModel.allPlaylists[index]))) {
                                 VStack {
                                     AsyncImage(url: viewModel.allPlaylists[index].thumbnail_url) { image in
                                         image
