@@ -10,7 +10,7 @@ import AVKit
 struct HomePageScreen: View {
 
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             ScrollView {
                 VStack {
                     SliderView()
@@ -25,7 +25,7 @@ struct HomePageScreen: View {
                 .padding(5)
                 
             }
-        }
+
         .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
     }
     
