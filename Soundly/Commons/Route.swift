@@ -20,6 +20,9 @@ enum Route: Hashable{
     case signUpScreen
     case oTPScreen(OTPScreenDefault)
     case forgotUsername
+    case languageSelectionScreen
+    case artistSelectionScreen
+    case mainView
 
 }
 

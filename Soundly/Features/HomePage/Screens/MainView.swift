@@ -25,7 +25,6 @@ struct MainView: View {
 
 
     var body: some View {
-        NavigationStack {
             ZStack {
                 TabView {
                     NowPlayingBars(content:   HomePageScreen()
@@ -78,7 +77,6 @@ struct MainView: View {
             }.navigationBarTitleDisplayMode(.inline)
         }
         
-    }
 }
 
 struct NowPlayingBars<Content: View>: View {
