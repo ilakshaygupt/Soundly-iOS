@@ -8,10 +8,12 @@ import SwiftUI
 
 struct LanguageSelectionScreen: View {
     @State private var selectedLanguages: Set<String> = []
+    @EnvironmentObject private var navigationState: NavigationState
+
 
     let languageOptions = ["Hindi", "English", "Haryanvi", "Punjabi"]
     var body: some View {
-        NavigationStack{
+//        NavigationStack{
             VStack(alignment: .center) {
                 Text("Which language songs are your favorite?")
                     .font(.system(size: 24))
@@ -45,21 +47,25 @@ struct LanguageSelectionScreen: View {
                 
                 HStack{
                     Spacer()
-                    NavigationLink(destination:ArtistSelectionScreen()){
+
+                    Button(
+                        action:{
+                            navigationState.routes.append(.artistSelectionScreen)
+                        }
+                    ){
                         Text("NEXT")
                         
                             .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
                             .bold()
                         
                     }
-                    
-                    
+
                 }.padding()
             }
         }
         }
     
-}
+//}
 
 struct LanguageSelectionScreen_Previews: PreviewProvider {
     static var previews: some View {

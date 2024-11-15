@@ -47,7 +47,7 @@ struct SongSheetView: View {
             }.padding(getScreenBounds().width * 0.05)
 
 
-            PlayerControls(song: song,player: player)
+            PlayerControls(song: song,player:player)
                 .padding(getScreenBounds().width * 0.05)
 
             Spacer()

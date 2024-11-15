@@ -16,11 +16,12 @@ struct OTPScreen: View {
     @FocusState private var isOTPFieldFocused: Bool
     private let numberOfFieldsInOTP = 4
     @EnvironmentObject private var navigationState: NavigationState
+    @AppStorage("isOnboardingComplete") private var isOnboardingComplete = false
 
     var body: some View {
-        if viewModel.success {
-            LanguageSelectionScreen()
-        } else {
+//        if viewModel.success {
+//            LanguageSelectionScreen()
+//        } else {
 
                 VStack(alignment: .center) {
                     Image("OTPIllustration")
@@ -88,28 +89,34 @@ struct OTPScreen: View {
                     
                    
                 }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Spacer()
-                            Image("S")
-                            Text("Soundly")
-                                .font(.system(size: 28))
-                            Spacer()
-
-                            NavigationLink(destination: LoginScreen()) {
-                                Text("Login")
-                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
-                                    .bold()
-                                    .font(.system(size: 20))
-                                    .padding(.leading, 20)
-                            }
-                        }
-                    }
+                .onChange(of: viewModel.success) { oldValue, newValue in
+                    isOnboardingComplete = true
+                    navigationState.popToRoot()
+//                    navigationState.routes.append(.languageSelectionScreen)
+                    
                 }
+//                .toolbar {
+//                    ToolbarItem(placement: .principal) {
+//                        HStack {
+//                            Spacer()
+//                            Image("S")
+//                            Text("Soundly")
+//                                .font(.system(size: 28))
+//                            Spacer()
+//
+//                            NavigationLink(destination: LoginScreen()) {
+//                                Text("Login")
+//                                    .foregroundColor(Color(red: 0.0, green: 0.545, blue: 0.545))
+//                                    .bold()
+//                                    .font(.system(size: 20))
+//                                    .padding(.leading, 20)
+//                            }
+//                        }
+//                    }
+//                }
 
           
-        }
+//        }
     }
 }
 

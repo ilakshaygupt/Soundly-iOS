@@ -8,6 +8,7 @@ import Foundation
 import SwiftUI
 import AVKit
 import Combine
+import SwiftUI
 
 struct PlayerControls: View {
     @StateObject var currentSong = CurrentSongViewModel.shared
@@ -21,13 +22,13 @@ struct PlayerControls: View {
                 player.pause()
                 currentSong.isPlaying = false
             }
-            
+
             currentSong.currentSong = song
             currentSong.player = player
             currentSong.isPlaying = true
         }
         else{
-            
+
 
         }
 
