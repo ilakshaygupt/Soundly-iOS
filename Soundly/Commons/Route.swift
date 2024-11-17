@@ -23,6 +23,11 @@ enum Route: Hashable{
     case languageSelectionScreen
     case artistSelectionScreen
     case mainView
+    case home
+    case library
+    case search
+    case game
+    case detail
 
 }
 
@@ -41,8 +46,6 @@ class NavigationState: ObservableObject {
     func pushAsRoot(_ route: Route) {
         routes.removeAll()
         routes.append(route)
-
-
 
     }
     func replace(with route: Route) {

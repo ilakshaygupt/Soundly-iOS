@@ -9,45 +9,26 @@ import SwiftUI
 import AVKit
 import Combine
 import SwiftUI
+import SwiftUI
 
 struct PlayerControls: View {
-    @StateObject var currentSong = CurrentSongViewModel.shared
+    @EnvironmentObject var logic: PlayerControlsLogic
+
     let song: SongData
-
-    init(song: SongData, player: AVPlayer) {
-        self.song = song
-        if currentSong.currentSong?.id != song.id {
-
-            if let player = currentSong.player {
-                player.pause()
-                currentSong.isPlaying = false
-            }
-
-            currentSong.currentSong = song
-            currentSong.player = player
-            currentSong.isPlaying = true
-        }
-        else{
-
-
-        }
-
-
-    }
 
     var body: some View {
         VStack {
             HStack {
-                Text(formatTime(seconds: currentSong.currentTime))
+                Text(formatTime(seconds: logic.currentTime))
                     .font(.caption)
                 Slider(
-                    value: $currentSong.currentTime,
+                    value: $logic.currentTime,
                     in: 0...song.durationInSeconds,
                     step: 1.0,
                     onEditingChanged: { editing in
-                        currentSong.isDragging = editing
+                        logic.isDragging = editing
                         if !editing {
-                            currentSong.player!.seek(to: CMTime(seconds: currentSong.currentTime, preferredTimescale: 1))
+                            logic.seek(to: logic.currentTime)
                         }
                     }
                 )
@@ -74,14 +55,9 @@ struct PlayerControls: View {
                 }
 
                 Button(action: {
-                    if currentSong.isPlaying {
-                        currentSong.player!.pause()
-                    } else {
-                        currentSong.player!.play()
-                    }
-                    currentSong.isPlaying.toggle()
+                    logic.togglePlayPause()
                 }) {
-                    Image(systemName: currentSong.isPlaying ? "pause.circle" : "play.circle")
+                    Image(systemName: logic.isPlaying ? "pause.circle" : "play.circle")
                         .font(.system(size: 40))
                         .accentColor(.black)
                 }
@@ -104,27 +80,11 @@ struct PlayerControls: View {
             }
             .padding(.top)
         }
-        .onReceive(currentSong.player!.currentTimePublisher) { time in
-            if !currentSong.isDragging {
-                currentSong.currentTime = time
-            }
-        }
     }
 
     private func formatTime(seconds: Double) -> String {
         let minutes = Int(seconds) / 60
         let seconds = Int(seconds) % 60
         return String(format: "%02d:%02d", minutes, seconds)
-    }
-}
-
-extension AVPlayer {
-    var currentTimePublisher: AnyPublisher<Double, Never> {
-        Timer.publish(every: 0.5, on: .main, in: .default)
-            .autoconnect()
-            .map { [weak self] _ in
-                self?.currentTime().seconds ?? 0
-            }
-            .eraseToAnyPublisher()
     }
 }
