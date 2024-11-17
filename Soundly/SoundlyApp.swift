@@ -12,14 +12,16 @@ import SwiftUI
 struct SoundlyApp: App {
     @StateObject private var navigationState = NavigationState()
     @AppStorage("isOnboardingComplete") private var isOnboardingComplete = false
-    @StateObject private var currentSongViewModel = CurrentSongViewModel.shared
+    @StateObject private var playerControls = PlayerControlsLogic.shared
+    @StateObject private var tabViewModel = TabViewModel()
 
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationState.routes) {
                 if isOnboardingComplete {
                     MainView()
-                        .environmentObject(currentSongViewModel)
+                        .environmentObject(playerControls)
+                        .environmentObject(tabViewModel)
                         .navigationDestination(for: Route.self) { route in
                             navigationDestination(for: route)
                         }
@@ -35,6 +37,7 @@ struct SoundlyApp: App {
                 }
             }
             .environmentObject(navigationState)
+            .environmentObject(tabViewModel)
         }
     }
 
@@ -59,7 +62,26 @@ struct SoundlyApp: App {
                 ArtistSelectionScreen()
             case .mainView:
                 MainView()
-                    .environmentObject(currentSongViewModel)
+                    .environmentObject(playerControls)
+                    .environmentObject(tabViewModel)
+            case .home:
+                HomePageScreen()
+                    .withTabBar()
+                    .navigationBarBackButtonHidden()
+            case .library:
+                LibraryScreen()
+                    .withTabBar()
+                    .navigationBarBackButtonHidden()
+            case .search:
+                SearchScreen()
+                    .withTabBar()
+                    .navigationBarBackButtonHidden()
+            case .game:
+                GameView()
+                    .withTabBar()
+                    .navigationBarBackButtonHidden()
+            case .detail:
+                DetailView()
         }
     }
 }

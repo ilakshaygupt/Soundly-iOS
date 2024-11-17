@@ -11,8 +11,8 @@ import AVKit
 import Combine
 
 struct NowPlayingBar : View {
-    @ObservedObject var currentSong = CurrentSongViewModel.shared
-
+    @ObservedObject var currentSong = PlayerControlsLogic.shared
+//    @StateObject private var logic = PlayerControlsLogic.shared
     var body : some View {
         VStack(spacing: 8){
             GeometryReader { geometry in
@@ -60,9 +60,9 @@ struct NowPlayingBar : View {
 
                     Button(action: {
                         if currentSong.isPlaying {
-                            currentSong.pause()
+                            currentSong.togglePlayPause()
                         } else {
-                            currentSong.play()
+                            currentSong.togglePlayPause()
                         }
                     }) {
                         Image(systemName: currentSong.isPlaying ? "pause.fill" : "play.fill")
@@ -83,7 +83,7 @@ struct NowPlayingBar : View {
                 .frame(height: 50)
 
             GeometryReader { geometry in
-                ZStack(alignment: .leading) {
+                HStack() {
 
                     Rectangle()
                         .fill(Color.gray.opacity(0.3))

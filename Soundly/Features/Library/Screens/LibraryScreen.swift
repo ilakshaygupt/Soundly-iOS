@@ -18,7 +18,7 @@ struct LibraryScreen: View {
     ]
 
     var body: some View {
-        NavigationStack {
+
             VStack {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
@@ -46,7 +46,7 @@ struct LibraryScreen: View {
                             }
                         }
 
-                        NavigationLink(destination:CreatePlaylistScreen()){
+                        NavigationLink(destination:NowPlayingBars(content:   CreatePlaylistScreen())){
                             Image("CreatePlaylistIllutration")
                                 .padding()
                                 .background(Color(.systemBackground))
@@ -59,13 +59,36 @@ struct LibraryScreen: View {
                 }
             }
             .onAppear {
-                viewModel.fetchSongs()
+                if viewModel.allPlaylists.isEmpty {
+                    viewModel.fetchSongs()
+                }
             }
         }
-    }
+
 }
 
 #Preview {
     LibraryScreen()
+}
+
+struct NowPlayingBars<Content: View>: View {
+    var content: Content
+
+    @EnvironmentObject var currentSongViewModel: PlayerControlsLogic
+
+    var body: some View {
+        HStack(alignment: .bottom) {
+            content
+
+            if let _ = currentSongViewModel.currentSong {
+                NavigationLink(destination: CurrentSongView()
+                ) {
+                    NowPlayingBar()
+                        .padding()
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+        }
+    }
 }
 
