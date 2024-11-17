@@ -50,6 +50,7 @@ class APIRequest<Parameters: Encodable, Model: Decodable> {
             if let data = data {
                 
                 completion(data)
+                print(data)
             } else {
                 if error != nil {
                     print(APIError.response)
