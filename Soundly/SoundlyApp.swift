@@ -13,15 +13,18 @@ struct SoundlyApp: App {
     @StateObject private var navigationState = NavigationState()
     @AppStorage("isOnboardingComplete") private var isOnboardingComplete = false
     @StateObject private var playerControls = PlayerControlsLogic.shared
-    @StateObject private var tabViewModel = TabViewModel()
+
+    @Namespace var animation
 
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationState.routes) {
                 if isOnboardingComplete {
-                    MainView()
+                    ContentContainer(
+                        content: HomePageScreen(),
+                        currentTabIndex: 0
+                    )
                         .environmentObject(playerControls)
-                        .environmentObject(tabViewModel)
                         .navigationDestination(for: Route.self) { route in
                             navigationDestination(for: route)
                         }
@@ -36,8 +39,9 @@ struct SoundlyApp: App {
                         }
                 }
             }
+            .transition(.blurReplace())
             .environmentObject(navigationState)
-            .environmentObject(tabViewModel)
+//            .environmentObject(tabViewModel)
         }
     }
 
@@ -60,28 +64,59 @@ struct SoundlyApp: App {
                 LanguageSelectionScreen()
             case .artistSelectionScreen:
                 ArtistSelectionScreen()
-            case .mainView:
-                MainView()
-                    .environmentObject(playerControls)
-                    .environmentObject(tabViewModel)
             case .home:
-                HomePageScreen()
-                    .withTabBar()
-                    .navigationBarBackButtonHidden()
+                ContentContainer(
+                    content: HomePageScreen(),
+                    currentTabIndex: 0
+                )
+                .environmentObject(playerControls)
+                .navigationBarBackButtonHidden()
+//                .matchedGeometryEffect(id: "animation", in: animation)
+                .swipeBackGesture()
+
             case .library:
-                LibraryScreen()
-                    .withTabBar()
-                    .navigationBarBackButtonHidden()
+                ContentContainer(
+                    content: LibraryScreen(),
+                    currentTabIndex: 1
+                )
+                .environmentObject(playerControls)
+                .navigationBarBackButtonHidden()
+//                .matchedGeometryEffect(id: "animation", in: animation)
+                .swipeBackGesture()
+                
+
             case .search:
-                SearchScreen()
-                    .withTabBar()
-                    .navigationBarBackButtonHidden()
+                ContentContainer(
+                    content: SearchScreen(),
+                    currentTabIndex: 2
+                )
+                .environmentObject(playerControls)
+                .navigationBarBackButtonHidden()
+                .swipeBackGesture()
+//                .matchedGeometryEffect(id: "animation", in: animation)
             case .game:
-                GameView()
-                    .withTabBar()
-                    .navigationBarBackButtonHidden()
+                ContentContainer(
+                    content: GameView(),
+                    currentTabIndex: 3
+                )
+                .environmentObject(playerControls)
+                .navigationBarBackButtonHidden()
+                .swipeBackGesture()
+//                .matchedGeometryEffect(id: "animation", in: animation)
             case .detail:
-                DetailView()
+                ContentContainer(
+                    content: DetailView(),
+                    currentTabIndex: 3
+                )
+                .environmentObject(playerControls)
+                .navigationBarBackButtonHidden()
+                .swipeBackGesture()
+//                .matchedGeometryEffect(id: "animation", in: animation)
+            case .songSheetView:
+                SongSheetView()
+                    .environmentObject(playerControls)
         }
+
     }
+
 }

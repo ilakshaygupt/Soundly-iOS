@@ -22,12 +22,12 @@ enum Route: Hashable{
     case forgotUsername
     case languageSelectionScreen
     case artistSelectionScreen
-    case mainView
     case home
     case library
     case search
     case game
     case detail
+    case songSheetView
 
 }
 
@@ -41,18 +41,27 @@ class NavigationState: ObservableObject {
     }
 
     func popToRoot() {
-        routes.removeLast(routes.count)
+        withAnimation {
+
+            routes.removeLast(routes.count)
+        }
     }
     func pushAsRoot(_ route: Route) {
-        routes.removeAll()
-        routes.append(route)
+        withAnimation {
+
+            routes.removeAll()
+            routes.append(route)
+        }
 
     }
     func replace(with route: Route) {
-        if !routes.isEmpty {
-            routes.removeLast()
+        withAnimation {
+
+            if !routes.isEmpty {
+                routes.removeLast()
+            }
+            routes.append(route) // Add the new route
         }
-        routes.append(route) // Add the new route
     }
 
 

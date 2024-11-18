@@ -11,23 +11,49 @@ import SwiftUI
 import SwiftUI
 
 struct CurrentSongView: View {
-    @ObservedObject var currentSong = PlayerControlsLogic.shared
+    @EnvironmentObject var currentSong : PlayerControlsLogic
 
     var body: some View {
         VStack {
-            if let song = currentSong.currentSong {
-                // Display song details here
-                Text(song.name)
-                    .font(.largeTitle)
-//                Text(song.artist ?? "Unknown Artist")
-//                    .font(.title)
+            if currentSong.currentSong != nil {
+                VStack {
+                    // Ensure song is available
+                    if let song = currentSong.currentSong {
+                        AsyncImage(url: URL(string: song.thumbnail_url)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                                .scaledToFill()
+                                .frame(width: getScreenBounds().width * 0.9, height: getScreenBounds().width * 0.9 )
+                        } placeholder: {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .controlSize(.large)
+                        }
 
-                // Play/Pause button or other song controls
-                Button(action: {
-                    currentSong.togglePlayPause()
-                }) {
-                    Text(currentSong.isPlaying ? "Pause" : "Play")
-                }
+                        HStack {
+                            Text(song.name)
+                                .font(.largeTitle)
+                                .bold()
+                                .fontWeight(.heavy)
+                            Spacer()
+                            Image(systemName: song.is_liked ? "heart.fill" : "heart")
+                                .font(.largeTitle)
+                                .foregroundColor(song.is_liked ? .teal : .black)
+                        }.padding(getScreenBounds().width * 0.05)
+
+                        PlayerControls(song: song) // Player control for current song
+                            .padding(getScreenBounds().width * 0.05)
+
+                    } else {
+                        Text("Loading song...")
+                            .font(.title)
+                            .foregroundColor(.gray)
+                    }
+
+                    Spacer()
+                }.padding()
             } else {
                 Text("No song currently playing")
             }

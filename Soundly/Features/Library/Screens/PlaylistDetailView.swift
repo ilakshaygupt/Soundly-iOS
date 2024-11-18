@@ -51,5 +51,6 @@ struct PlaylistDetailView: View {
         .onAppear {
             viewModel.getPlaylistSongs(id: String(playlist.id))
         }
+//        .withTabBar()
     }
 }

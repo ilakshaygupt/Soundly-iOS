@@ -10,35 +10,6 @@ import AVKit
 import Combine
 
 
-
-struct MainView: View {
-    @EnvironmentObject var tabViewModel: TabViewModel
-    @EnvironmentObject var playerControls: PlayerControlsLogic
-    @EnvironmentObject var navigationState: NavigationState
-
-    var body: some View {
-        HomePageScreen()
-            .withTabBar()
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text("Hey, Lakshay")
-                            .font(.system(size: 28))
-                        Spacer()
-                        Image("Honey Singh")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                    }
-                    .padding(.bottom, 3)
-                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-
-
 struct GameView: View {
     @EnvironmentObject var navigationstate : NavigationState
     var body: some View {
@@ -53,7 +24,7 @@ struct GameView: View {
                     {
                         Text("GO TO DETAIL VIEW")
                     }
-
+                Spacer()
             }
 
 //        .withTabBar()
@@ -64,15 +35,16 @@ struct DetailView: View {
     var body: some View {
         VStack {
             Text("Detail View")
+            Spacer()
 
         }
-        .withTabBar()
+//        .withTabBar()
     }
 }
 
 
-#Preview {
-    MainView()
-        .environmentObject(TabViewModel())
-        .environmentObject(PlayerControlsLogic.shared)
-}
+//#Preview {
+//    MainView()
+//        .environmentObject(TabViewModel())
+//        .environmentObject(PlayerControlsLogic.shared)
+//}

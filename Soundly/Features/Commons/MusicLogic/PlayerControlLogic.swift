@@ -15,7 +15,7 @@ class PlayerControlsLogic: ObservableObject {
     static let shared = PlayerControlsLogic()
     private var cancellables = Set<AnyCancellable>()
 
-    @Published var currentSong: SongData?
+    @Published var currentSong: SongData? = SongData.defaulty
     @Published var isPlaying: Bool = false
     @Published var currentTime: Double = 0.0
     @Published var isDragging: Bool = false
