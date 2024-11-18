@@ -37,6 +37,7 @@
 		5C2474822C099EC400B35058 /* LanguageSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */; };
 		5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */; };
 		5C2474872C09F42700B35058 /* ArtistSelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */; };
+		5C27546D2CEB1D460077D6FC /* SwipeBackGestureModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C27546C2CEB1D460077D6FC /* SwipeBackGestureModifier.swift */; };
 		5C2799E12C13260900E81D5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799E02C13260900E81D5C /* MainView.swift */; };
 		5C2799E72C1330BB00E81D5C /* SongSeachAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799E62C1330BB00E81D5C /* SongSeachAction.swift */; };
 		5C2799E92C1331E800E81D5C /* SongHorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2799E82C1331E800E81D5C /* SongHorizontalView.swift */; };
@@ -169,6 +170,7 @@
 		5C2474812C099EC400B35058 /* LanguageSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionScreen.swift; sourceTree = "<group>"; };
 		5C2474842C09DE4800B35058 /* GetBoundsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBoundsWidget.swift; sourceTree = "<group>"; };
 		5C2474862C09F42700B35058 /* ArtistSelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSelectionScreen.swift; sourceTree = "<group>"; };
+		5C27546C2CEB1D460077D6FC /* SwipeBackGestureModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackGestureModifier.swift; sourceTree = "<group>"; };
 		5C2799E02C13260900E81D5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5C2799E62C1330BB00E81D5C /* SongSeachAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSeachAction.swift; sourceTree = "<group>"; };
 		5C2799E82C1331E800E81D5C /* SongHorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongHorizontalView.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 		5C4F91FF2CE9A405007FCFB3 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				5C27546C2CEB1D460077D6FC /* SwipeBackGestureModifier.swift */,
 				5C4F92002CE9AB67007FCFB3 /* TabBar */,
 				5CD9D9242C1232F500C46159 /* ShimmerView.swift */,
 				5C4F91F32CE7F2E7007FCFB3 /* CurrentSongVIew.swift */,
@@ -825,6 +828,7 @@
 				5C7280982C11CDC700BA9534 /* XCRemoteSwiftPackageReference "NetworkImage" */,
 				5C7280A42C12148E00BA9534 /* XCRemoteSwiftPackageReference "PageView" */,
 				5C2A54D52CC8D4100047BAD1 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				5C27546A2CEB1A1F0077D6FC /* XCRemoteSwiftPackageReference "swiftui-navigation-transitions" */,
 			);
 			productRefGroup = 5C78B8A22C006A36009AD656 /* Products */;
 			projectDirPath = "";
@@ -863,6 +867,7 @@
 			files = (
 				5CA270852C14BB3500A56E19 /* AllUserPlaylstRequest.swift in Sources */,
 				5C4F91F42CE7F2E7007FCFB3 /* CurrentSongVIew.swift in Sources */,
+				5C27546D2CEB1D460077D6FC /* SwipeBackGestureModifier.swift in Sources */,
 				5C0228032C100EED00D04DF2 /* ForgotUsernameRequest.swift in Sources */,
 				5C2474852C09DE4800B35058 /* GetBoundsWidget.swift in Sources */,
 				5CD9D92D2C1255F200C46159 /* SongDataModel.swift in Sources */,
@@ -1235,6 +1240,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.1;
+			};
+		};
+		5C27546A2CEB1A1F0077D6FC /* XCRemoteSwiftPackageReference "swiftui-navigation-transitions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davdroman/swiftui-navigation-transitions";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.0;
 			};
 		};
 		5C2A54D52CC8D4100047BAD1 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {

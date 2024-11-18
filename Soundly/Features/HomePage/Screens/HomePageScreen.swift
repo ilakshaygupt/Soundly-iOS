@@ -25,8 +25,22 @@ struct HomePageScreen: View {
                 .padding(5)
                 
             }
+               .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("Hey, Lakshay")
+                            .font(.system(size: 28))
+                        Spacer()
+                        Image("Honey Singh")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(Circle())
+                    }
+//                    .padding(.bottom, 3)
+                }
+            }
 
-        .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0))
+//               .padding(EdgeInsets(top: 0, leading: 0,bottom: 0, trailing: 0))
 //        .withTabBar()
     }
     

@@ -56,9 +56,7 @@ struct SongSheetView: View {
 
             Spacer()
         }.padding()
-            .onAppear {
 
-            }
     }
 }
 

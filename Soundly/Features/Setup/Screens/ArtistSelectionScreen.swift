@@ -75,7 +75,7 @@ struct ArtistSelectionScreen: View {
         } .onChange(of: isNextClicked) { oldValue, newValue in
             if newValue {
 
-                navigationState.routes.append(.mainView)
+                navigationState.routes.append(.home)
             }
 
         }
