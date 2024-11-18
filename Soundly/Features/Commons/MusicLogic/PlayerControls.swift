@@ -12,7 +12,7 @@ import SwiftUI
 import SwiftUI
 
 struct PlayerControls: View {
-    @EnvironmentObject var logic: PlayerControlsLogic
+    @EnvironmentObject var logic : PlayerControlsLogic
 
     let song: SongData
 

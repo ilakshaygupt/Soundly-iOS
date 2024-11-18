@@ -6,6 +6,28 @@
 //
 import SwiftUI
 
+class SongSeachViewModel: ObservableObject {
+    @Published var searchText: String = ""
+    @Published var songs: [Song] = []
+    @Published var errorMessage: String?
+
+    private let songSearchAction = SongSeachAction()
+
+    func searchSongs() {
+        songSearchAction.call(
+            query: searchText,
+            completion: { response in
+                self.songs = response.data
+                self.errorMessage = nil
+            },
+            failure: { error in
+                self.errorMessage = error.localizedDescription
+            }
+        )
+    }
+}
+
+
 struct SearchScreen: View {
     @StateObject var viewModel = SongSeachViewModel()
 

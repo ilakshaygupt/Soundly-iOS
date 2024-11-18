@@ -38,9 +38,9 @@ struct SongCardView: View {
             fetchSongDetails()
         }
         .sheet(isPresented: $showingSheet) {
-            if let songData = songData {
+
                 SongSheetView()
-            }
+            
         }
         .onAppear {
             isLoading = true
